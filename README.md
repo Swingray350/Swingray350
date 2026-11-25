@@ -1,35 +1,37 @@
 <div align="center">
 
-<!-- 上部のネオンフレーム（シアン） -->
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" width="100%" />
+<!-- 上部のネオンフレーム -->
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:00ffb2,50:00f6ff,100:00ffb2&height=4" width="100%" />
 
 <!-- メイン看板（ゆっくりと再描画されるターミナル演出） -->
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=48&duration=4000&pause=2000&color=00F2FE&center=true&vCenter=true&width=800&height=70&lines=TSUBAKI+SAWATARI;>_TSUBAKI+SAWATARI" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=48&duration=2000&pause=2000&color=00F2FE&center=true&vCenter=true&width=800&height=70&lines=TSUBAKI+SAWATARI;>_TSUBAKI+SAWATARI" alt="Typing SVG" />
   <br/>
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=16&duration=4000&pause=2000&color=FF007F&center=true&vCenter=true&width=800&height=30&lines=ID:+Swingray350+//+Electronics+&+3D+Fabrication;SYS.STATUS:+ONLINE+//+READY" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=16&duration=2000&pause=1000&delay=1000&color=FF007F&center=true&vCenter=true&width=800&height=30&lines=ID:+Swingray350+//+Electronics+&+3D+Fabrication;SYS.STATUS:+ONLINE+//+READY" alt="Typing SVG" />
 </a>
-
 <br/><br/>
-
 <!-- SNS・外部リンクボタン -->
 <a href="https://x.com/あなたのXのID" target="_blank">
   <img src="https://img.shields.io/badge/X_(Twitter)-@Swingray350-00f2fe?style=for-the-badge&logo=x&logoColor=00f2fe&labelColor=0d0221" alt="X" />
+</a>
+&nbsp;
+<a>
+<img src="https://img.shields.io/badge/Discord-ray.sd350-7928ca?style=for-the-badge&logo=discord&logoColor=00f2fe&labelColor=0d0221" alt="Discord" />
 </a>
 &nbsp;
 <a href="https://note.com/あなたのnoteのID" target="_blank">
   <img src="https://img.shields.io/badge/note-Articles_&_Logs-ff007f?style=for-the-badge&logo=note&logoColor=ff007f&labelColor=0d0221" alt="note" />
 </a>
 
-<br/><br/>
+<br/>
 <!-- セクション区切りのネオンフレーム（パープル） -->
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/purple.png" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=7928ca&height=1" width="100%" />
 </div>
 
 <br/>
 
 <!-- セクション1：SYSTEM INFO -->
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=20&duration=1&pause=1&color=00F2FE&width=300&height=35&lines=01+%2F%2F+SYSTEM_INFO" />
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=20&duration=1&pause=1&color=00f2fe&width=300&height=35&lines=01+%2F%2F+SYSTEM_INFO" />
 
 <br/>
 
@@ -44,7 +46,7 @@
 > _"Building physical & digital things in neon light."_<br><img src="https://img.shields.io/badge/Status-ONLINE-00f2fe?style=flat-square&color=00f2fe&labelColor=0d0221" alt="Status" /> <img src="https://img.shields.io/badge/Base-Japan-ff007f?style=flat-square&color=ff007f&labelColor=0d0221" alt="Base" />
 
 <br/>
-<div align="center"><img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" width="100%" /></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=7928ca&height=1" width="100%" /></div>
 <br/>
 
 <!-- セクション2：CORE STACK -->
@@ -54,24 +56,30 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=14&duration=1&pause=1&color=FF007F&width=200&height=20&lines=[+ELECTRONICS+]" />
 <br/>
-<img src="https://img.shields.io/badge/ESP32-Microcontroller-ff007f?style=for-the-badge&logo=espressif&logoColor=00f2fe&labelColor=0d0221" alt="ESP32" />
-<img src="https://img.shields.io/badge/Arduino-Prototyping-00f2fe?style=for-the-badge&logo=arduino&logoColor=ff007f&labelColor=0d0221" alt="Arduino" />
+<img src="https://img.shields.io/badge/ESP32-Microcontroller-ff007f?style=for-the-badge&logo=espressif&logoColor=00f2fe&labelColor=2a3447" alt="ESP32" />
+<img src="https://img.shields.io/badge/Arduino-Prototyping-00f2fe?style=for-the-badge&logo=arduino&logoColor=ff007f&labelColor=2a3447" alt="Arduino" />
 
 <br/><br/>
 
 <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=14&duration=1&pause=1&color=FF007F&width=200&height=20&lines=[+FABRICATION+]" />
 <br/>
-<img src="https://img.shields.io/badge/3D_Printing-Additive_Mfg-7928ca?style=for-the-badge&logo=bambulab&logoColor=00f2fe&labelColor=0d0221" alt="3D Printing" />
-<img src="https://img.shields.io/badge/Autodesk_Fusion-3D_CAD-ff007f?style=for-the-badge&logo=autodesk&logoColor=00f2fe&labelColor=0d0221" alt="Fusion" />
+<img src="https://img.shields.io/badge/3D_Printing-Additive_Mfg-7928ca?style=for-the-badge&logo=bambulab&logoColor=00f2fe&labelColor=2a3447" alt="3D Printing" />
+<img src="https://img.shields.io/badge/Autodesk_Fusion-3D_CAD-ff007f?style=for-the-badge&logo=autodesk&logoColor=00f2fe&labelColor=2a3447" alt="Fusion" />
 
 <br/><br/>
 
 <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=14&duration=1&pause=1&color=FF007F&width=250&height=20&lines=[+SOFTWARE_&+TOOLS+]" />
 <br/>
-<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=arduino,cpp,c,py,git,github,vscode&theme=dark&perline=7" /></a>
+<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=arduino,cpp,c,py,unity,blender,git,github,vscode&theme=dark&perline=9" /></a>
 
 <br/><br/>
-<div align="center"><img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/purple.png" width="100%" /></div>
+
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=14&duration=1&pause=1&color=FF007F&width=250&height=20&lines=[+COMMUNICATION+]" />
+<br/>
+<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=discord,twitter&theme=dark" /></a>
+
+<br/><br/>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=7928ca&height=1" width="100%" /></div>
 <br/>
 
 <!-- セクション3：TELEMETRY DATA -->
@@ -89,7 +97,7 @@
 </div>
 
 <br/>
-<div align="center"><img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" width="100%" /></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=7928ca&height=1" width="100%" /></div>
 <br/>
 
 <!-- セクション4：HARDWARE LAB -->
@@ -116,6 +124,6 @@
 <br/><br/>
 
 <!-- 下部のネオンフレーム（パープル） -->
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/purple.png" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:00ffb2,50:00f6ff,100:00ffb2&height=4" width="100%" />
 
 </div>
