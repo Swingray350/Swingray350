@@ -1,5 +1,6 @@
 import os
 import requests
+import math
 from datetime import datetime
 
 # GitHub API設定
@@ -35,35 +36,69 @@ days = []
 for week in data['data']['user']['contributionsCollection']['contributionCalendar']['weeks']:
     for day in week['contributionDays']:
         days.append(day['contributionCount'])
-recent_days = days[-60:] # 直近60日
+recent_days = days[-61:] # 直近61日
+actual_max = max(recent_days)
+
+if actual_max <= 8:
+  max_count = actual_max + 1 if actual_max % 2 != 0 else actual_max
+
+# Y軸の目盛りを計算（0からmax_countまで、均等に4〜5個の目盛りを作る）
+# 目盛りのステップ（刻み幅）を偶数になるように計算
+step = max(2, math.ceil((max_count / 4) / 2) * 2)
+y_tick_values = list(range(0, max_count + 1, step))
+if y_tick_values[-1] != max_count:
+    y_tick_values.append(max_count)
 
 # SVGの座標（パス）を計算
 width, height = 800, 200
-max_count = max(recent_days) if max(recent_days) > 0 else 1
 points = []
 
+# 軸ラベルを置くために、描画エリアの左と下に少し余白を広げる
 for i, count in enumerate(recent_days):
-    x = 50 + (i / 59) * 700  # 左右の余白50px
-    y = 150 - (count / max_count * 100) # 下余白50pxから上に伸びる
-    points.append(f"{x},{y}")
+  display_count = count if count > 0 else 0.1
+  x = 60 + (i / 60) * 690  # X座標: 60px 〜 750px
+  y = 150 - (display_count / max_count * 100) # Y座標: 150px から上に伸びる
+  points.append(f"{x},{y}")
 
 path_d = "M " + " L ".join(points)
 
-# SVGファイルの生成（薄い背景ライン ＋ アニメーションする光のパルス）
+# Y軸の目盛り生成 (0, 2, 4, 6, 8)
+y_ticks = ""
+for val in y_tick_values:
+    y = 150 - (val / max_count * 100)
+    y_ticks += f'<line x1="55" y1="{y}" x2="60" y2="{y}" stroke="#7928ca" stroke-width="1"/>\n  '
+    y_ticks += f'<text x="50" y="{y + 3}" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="end">{val}</text>\n  '
+
+# X軸の目盛り生成 (-60d, -45d, -30d, -15d, Today)
+x_ticks = ""
+for i in [0, 15, 30, 45, 60]:
+    x = 60 + (i / 60) * 690
+    label = "Today" if i == 60 else f"-{60 - i}d"
+    x_ticks += f'<line x1="{x}" y1="150" x2="{x}" y2="155" stroke="#7928ca" stroke-width="1"/>\n  '
+    x_ticks += f'<text x="{x}" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">{label}</text>\n  '
+
+# SVGファイルの生成
 svg_content = f"""<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">
   <!-- 背景 -->
   <rect width="{width}" height="{height}" fill="#0d0221" rx="10"/>
   
-  <!-- グリッド線（サイバー感の演出） -->
-  <line x1="50" y1="150" x2="750" y2="150" stroke="#7928ca" stroke-width="1" opacity="0.5" stroke-dasharray="4 4"/>
-  <line x1="50" y1="50" x2="750" y2="50" stroke="#7928ca" stroke-width="1" opacity="0.3" stroke-dasharray="4 4"/>
+  <!-- テキスト（タイトルと軸ラベル） -->
+  <text x="60" y="30" fill="#00f2fe" font-family="monospace" font-size="16" font-weight="bold">Contribution Graph</text>
+  <text x="20" y="100" fill="#7928ca" font-family="monospace" font-size="12" transform="rotate(-90 20,100)" text-anchor="middle">Contributions</text>
+  <text x="405" y="185" fill="#7928ca" font-family="monospace" font-size="12" text-anchor="middle">Days</text>
+
+  <!-- 軸線・グリッド線 -->
+  <line x1="60" y1="150" x2="750" y2="150" stroke="#7928ca" stroke-width="1" opacity="0.8"/> <!-- X軸のベースライン -->
+  <line x1="60" y1="50" x2="60" y2="150" stroke="#7928ca" stroke-width="1" opacity="0.8"/>  <!-- Y軸のベースライン -->
+  <line x1="60" y1="50" x2="750" y2="50" stroke="#7928ca" stroke-width="1" opacity="0.3" stroke-dasharray="4 4"/> <!-- 上部の点線 -->
 
   <!-- 薄く常に表示される全体波形（ゴースト） -->
   <path d="{path_d}" fill="none" stroke="#00f2fe" stroke-width="2" opacity="0.2"/>
 
-  <!-- 左から右へ走るネオンパルス（ECGエフェクト） -->
-  <path d="{path_d}" fill="none" stroke="#ff007f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="150 2000" stroke-dashoffset="2000">
-    <animate attributeName="stroke-dashoffset" from="2000" to="-150" dur="4s" repeatCount="indefinite" />
+  <!-- 左端から描画され、完成したら消えてループするネオンライン -->
+  <path d="{path_d}" fill="none" stroke="#ff007f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2000" stroke-dashoffset="2000">
+    <!-- values="2000;0;0" と keyTimes="0;0.8;1" で、最後の20%（1秒間）は完成状態で停止する演出 -->
+    <animate attributeName="stroke-dashoffset" values="2000;0;0" keyTimes="0;0.8;1" dur="5s" repeatCount="indefinite" />
   </path>
 </svg>
 """
