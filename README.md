@@ -3,12 +3,8 @@
 <!-- 上部のネオンフレーム -->
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:00ffb2,50:00f6ff,100:00ffb2&height=4" width="100%" />
 
-<!-- メイン看板（ゆっくりと再描画されるターミナル演出） -->
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=48&duration=2000&pause=2000&color=00F2FE&center=true&vCenter=true&width=800&height=70&lines=TSUBAKI+SAWATARI;>_TSUBAKI+SAWATARI" alt="Typing SVG" />
-  <br/>
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=16&duration=2000&pause=1000&delay=1000&color=FF007F&center=true&vCenter=true&width=800&height=30&lines=ID:+Swingray350+//+Electronics+&+3D+Fabrication;SYS.STATUS:+ONLINE+//+READY" alt="Typing SVG" />
-</a>
+<!-- メイン看板（上下2行が同期して再描画されるターミナル演出） -->
+<img src="./banner.svg" alt="TSUBAKI SAWATARI - ID: Swingray350" />
 <br/><br/>
 <!-- SNS・外部リンクボタン -->
 <a href="https://x.com/あなたのXのID" target="_blank">
@@ -89,9 +85,7 @@
 
 <img height="175em" src="https://github-readme-stats.vercel.app/api?username=Swingray350&show_icons=true&bg_color=0d0221&title_color=00f2fe&text_color=e0e0e0&icon_color=ff007f&border_color=ff007f&hide_border=false&ring_color=00f2fe" />
 <img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Swingray350&layout=compact&bg_color=0d0221&title_color=00f2fe&text_color=e0e0e0&border_color=00f2fe&hide_border=false" />
-
-<br/>
-
+<br/><br/>
 <!-- カスタム生成されたECG波形グラフ -->
 <img src="./ecg-graph.svg" width="95%" />
 
