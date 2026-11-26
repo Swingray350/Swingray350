@@ -7,16 +7,16 @@
 <img src="./banner.svg" alt="TSUBAKI SAWATARI - ID: Swingray350" />
 <br/><br/>
 <!-- SNS・外部リンクボタン -->
-<a href="https://x.com/あなたのXのID" target="_blank">
-  <img src="https://img.shields.io/badge/X_(Twitter)-@Swingray350-00f2fe?style=for-the-badge&logo=x&logoColor=00f2fe&labelColor=0d0221" alt="X" />
+<a href="https://x.com/swtr350_ino" target="_blank">
+  <img src="https://img.shields.io/badge/X_(Twitter)-@swtr350_ino-00f2fe?style=for-the-badge&logo=x&logoColor=00f2fe&labelColor=0d0221" alt="X" />
 </a>
 &nbsp;
 <a>
 <img src="https://img.shields.io/badge/Discord-ray.sd350-7928ca?style=for-the-badge&logo=discord&logoColor=00f2fe&labelColor=0d0221" alt="Discord" />
 </a>
 &nbsp;
-<a href="https://note.com/あなたのnoteのID" target="_blank">
-  <img src="https://img.shields.io/badge/note-Articles_&_Logs-ff007f?style=for-the-badge&logo=note&logoColor=ff007f&labelColor=0d0221" alt="note" />
+<a href="https://note.com/swingray350" target="_blank">
+  <img src="https://img.shields.io/badge/note-swingray350-ff007f?style=for-the-badge&logo=note&logoColor=ff007f&labelColor=0d0221" alt="note" />
 </a>
 
 <br/>
