@@ -92,7 +92,8 @@
 
 <br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Swingray350&bg_color=0d0221&color=00f2fe&line=ff007f&point=00f2fe&area=true&hide_border=false&border_color=7928ca" width="95%" />
+<!-- カスタム生成されたECG波形グラフ -->
+<img src="./ecg-graph.svg" width="95%" />
 
 </div>
 
