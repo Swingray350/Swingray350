@@ -31,7 +31,7 @@ query = """
 response = requests.post('https://api.github.com/graphql', json={'query': query}, headers=HEADERS)
 data = response.json()
 
-# 過去60日分のデータを抽出
+# 過去61日分のデータを抽出
 days = []
 for week in data['data']['user']['contributionsCollection']['contributionCalendar']['weeks']:
     for day in week['contributionDays']:
@@ -39,8 +39,11 @@ for week in data['data']['user']['contributionsCollection']['contributionCalenda
 recent_days = days[-61:] # 直近61日
 actual_max = max(recent_days)
 
+# 実際の最大値に基づいて、上限を「一番近い偶数（最低でも8）」に設定
 if actual_max <= 8:
-  max_count = actual_max + 1 if actual_max % 2 != 0 else actual_max
+    max_count = 8
+else:
+    max_count = actual_max + 1 if actual_max % 2 != 0 else actual_max
 
 # Y軸の目盛りを計算（0からmax_countまで、均等に4〜5個の目盛りを作る）
 # 目盛りのステップ（刻み幅）を偶数になるように計算
@@ -55,14 +58,14 @@ points = []
 
 # 軸ラベルを置くために、描画エリアの左と下に少し余白を広げる
 for i, count in enumerate(recent_days):
-  display_count = count if count > 0 else 0.1
-  x = 60 + (i / 60) * 690  # X座標: 60px 〜 750px
-  y = 150 - (display_count / max_count * 100) # Y座標: 150px から上に伸びる
-  points.append(f"{x},{y}")
+    display_count = count if count > 0 else 0.1
+    x = 60 + (i / 60) * 690  # X座標: 60px 〜 750px
+    y = 150 - (display_count / max_count * 100) # Y座標: 150px から上に伸びる
+    points.append(f"{x},{y}")
 
 path_d = "M " + " L ".join(points)
 
-# Y軸の目盛り生成 (0, 2, 4, 6, 8)
+# Y軸の目盛り生成
 y_ticks = ""
 for val in y_tick_values:
     y = 150 - (val / max_count * 100)
@@ -92,13 +95,16 @@ svg_content = f"""<svg width="{width}" height="{height}" viewBox="0 0 {width} {h
   <line x1="60" y1="50" x2="60" y2="150" stroke="#7928ca" stroke-width="1" opacity="0.8"/>  <!-- Y軸のベースライン -->
   <line x1="60" y1="50" x2="750" y2="50" stroke="#7928ca" stroke-width="1" opacity="0.3" stroke-dasharray="4 4"/> <!-- 上部の点線 -->
 
+  <!-- 縦軸・横軸の目盛りとラベル -->
+  {y_ticks}
+  {x_ticks}
+
   <!-- 薄く常に表示される全体波形（ゴースト） -->
   <path d="{path_d}" fill="none" stroke="#00f2fe" stroke-width="2" opacity="0.2"/>
 
   <!-- 左端から描画され、完成したら消えてループするネオンライン -->
-  <path d="{path_d}" fill="none" stroke="#ff007f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2000" stroke-dashoffset="2000">
-    <!-- values="2000;0;0" と keyTimes="0;0.8;1" で、最後の20%（1秒間）は完成状態で停止する演出 -->
-    <animate attributeName="stroke-dashoffset" values="2000;0;0" keyTimes="0;0.8;1" dur="5s" repeatCount="indefinite" />
+  <path d="{path_d}" fill="none" stroke="#ff007f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100">
+    <animate attributeName="stroke-dashoffset" values="100;0;0" keyTimes="0;0.7;1" dur="2.5s" repeatCount="indefinite" />
   </path>
 </svg>
 """
