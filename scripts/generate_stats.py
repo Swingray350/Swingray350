@@ -170,8 +170,8 @@ def build_stats_svg(stats: dict[str, int]) -> str:
             else ""
         )
         bar_elements.append(
-            f'  <text x="18" y="{y}" fill="#e0e0e0" font-family="monospace" font-size="12.5">{label}</text>\n'
-            f'  <text x="266" y="{y}" fill="{color}" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">{val}</text>\n'
+            f'  <text x="18" y="{y}" fill="#e0e0e0" font-family="monospace" font-size="14">{label}</text>\n'
+            f'  <text x="266" y="{y}" fill="{color}" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">{val}</text>\n'
             f'  <rect x="{track_x:.0f}" y="{bar_y}" width="{track_w:.0f}" height="7" rx="3.5" fill="#2a1650" opacity="0.75"/>\n'
             f"{bar_rect}\n"
             f"{tick_lines}"

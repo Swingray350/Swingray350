@@ -23,15 +23,15 @@
   <text x="18" y="29" fill="#00f2fe" font-family="monospace" font-size="16.5" font-weight="bold">Swingray350's GitHub Stats</text>
 
   <!-- 左側：項目ごとの横棒グラフ -->
-  <text x="18" y="58" fill="#e0e0e0" font-family="monospace" font-size="12.5">STARS</text>
-  <text x="266" y="58" fill="#f9f871" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">0</text>
+  <text x="18" y="58" fill="#e0e0e0" font-family="monospace" font-size="14">STARS</text>
+  <text x="266" y="58" fill="#f9f871" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">0</text>
   <rect x="18" y="64" width="248" height="7" rx="3.5" fill="#2a1650" opacity="0.75"/>
 
   <line x1="80.0" y1="64" x2="80.0" y2="71" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
   <line x1="142.0" y1="64" x2="142.0" y2="71" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
   <line x1="204.0" y1="64" x2="204.0" y2="71" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
-  <text x="18" y="90" fill="#e0e0e0" font-family="monospace" font-size="12.5">COMMITS</text>
-  <text x="266" y="90" fill="#00f2fe" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">23</text>
+  <text x="18" y="90" fill="#e0e0e0" font-family="monospace" font-size="14">COMMITS</text>
+  <text x="266" y="90" fill="#00f2fe" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">23</text>
   <rect x="18" y="96" width="248" height="7" rx="3.5" fill="#2a1650" opacity="0.75"/>
   <rect x="18" y="96" width="190.1" height="7" rx="3.5" fill="#00f2fe" filter="url(#neon-glow)">
     <animate attributeName="width" from="0" to="190.1" dur="0.8s" fill="freeze" />
@@ -39,8 +39,8 @@
   <line x1="80.0" y1="96" x2="80.0" y2="103" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
   <line x1="142.0" y1="96" x2="142.0" y2="103" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
   <line x1="204.0" y1="96" x2="204.0" y2="103" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
-  <text x="18" y="122" fill="#e0e0e0" font-family="monospace" font-size="12.5">PRs</text>
-  <text x="266" y="122" fill="#ff007f" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">1</text>
+  <text x="18" y="122" fill="#e0e0e0" font-family="monospace" font-size="14">PRs</text>
+  <text x="266" y="122" fill="#ff007f" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">1</text>
   <rect x="18" y="128" width="248" height="7" rx="3.5" fill="#2a1650" opacity="0.75"/>
   <rect x="18" y="128" width="8.3" height="7" rx="3.5" fill="#ff007f" filter="url(#neon-glow)">
     <animate attributeName="width" from="0" to="8.3" dur="0.8s" fill="freeze" />
@@ -48,15 +48,15 @@
   <line x1="80.0" y1="128" x2="80.0" y2="135" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
   <line x1="142.0" y1="128" x2="142.0" y2="135" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
   <line x1="204.0" y1="128" x2="204.0" y2="135" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
-  <text x="18" y="154" fill="#e0e0e0" font-family="monospace" font-size="12.5">ISSUES</text>
-  <text x="266" y="154" fill="#a855f7" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">0</text>
+  <text x="18" y="154" fill="#e0e0e0" font-family="monospace" font-size="14">ISSUES</text>
+  <text x="266" y="154" fill="#a855f7" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">0</text>
   <rect x="18" y="160" width="248" height="7" rx="3.5" fill="#2a1650" opacity="0.75"/>
 
   <line x1="80.0" y1="160" x2="80.0" y2="167" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
   <line x1="142.0" y1="160" x2="142.0" y2="167" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
   <line x1="204.0" y1="160" x2="204.0" y2="167" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
-  <text x="18" y="186" fill="#e0e0e0" font-family="monospace" font-size="12.5">CONTRIB</text>
-  <text x="266" y="186" fill="#00ffb2" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">0</text>
+  <text x="18" y="186" fill="#e0e0e0" font-family="monospace" font-size="14">CONTRIB</text>
+  <text x="266" y="186" fill="#00ffb2" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">0</text>
   <rect x="18" y="192" width="248" height="7" rx="3.5" fill="#2a1650" opacity="0.75"/>
 
   <line x1="80.0" y1="192" x2="80.0" y2="199" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
