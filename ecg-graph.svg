@@ -24,12 +24,28 @@
   
   <line x1="60.0" y1="150" x2="60.0" y2="155" stroke="#7928ca" stroke-width="1"/>
   <text x="60.0" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">-60d</text>
+  <line x1="117.5" y1="150" x2="117.5" y2="155" stroke="#7928ca" stroke-width="1"/>
+  <text x="117.5" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">-55d</text>
+  <line x1="175.0" y1="150" x2="175.0" y2="155" stroke="#7928ca" stroke-width="1"/>
+  <text x="175.0" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">-50d</text>
   <line x1="232.5" y1="150" x2="232.5" y2="155" stroke="#7928ca" stroke-width="1"/>
   <text x="232.5" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">-45d</text>
+  <line x1="290.0" y1="150" x2="290.0" y2="155" stroke="#7928ca" stroke-width="1"/>
+  <text x="290.0" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">-40d</text>
+  <line x1="347.5" y1="150" x2="347.5" y2="155" stroke="#7928ca" stroke-width="1"/>
+  <text x="347.5" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">-35d</text>
   <line x1="405.0" y1="150" x2="405.0" y2="155" stroke="#7928ca" stroke-width="1"/>
   <text x="405.0" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">-30d</text>
+  <line x1="462.5" y1="150" x2="462.5" y2="155" stroke="#7928ca" stroke-width="1"/>
+  <text x="462.5" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">-25d</text>
+  <line x1="520.0" y1="150" x2="520.0" y2="155" stroke="#7928ca" stroke-width="1"/>
+  <text x="520.0" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">-20d</text>
   <line x1="577.5" y1="150" x2="577.5" y2="155" stroke="#7928ca" stroke-width="1"/>
   <text x="577.5" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">-15d</text>
+  <line x1="635.0" y1="150" x2="635.0" y2="155" stroke="#7928ca" stroke-width="1"/>
+  <text x="635.0" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">-10d</text>
+  <line x1="692.5" y1="150" x2="692.5" y2="155" stroke="#7928ca" stroke-width="1"/>
+  <text x="692.5" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">-5d</text>
   <line x1="750.0" y1="150" x2="750.0" y2="155" stroke="#7928ca" stroke-width="1"/>
   <text x="750.0" y="170" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="middle">Today</text>
   
@@ -39,6 +55,6 @@
 
   <!-- 左端から描画され、完成したら消えてループするネオンライン -->
   <path d="M 60.0,149.0 L 71.5,149.0 L 83.0,149.0 L 94.5,149.0 L 106.0,149.0 L 117.5,149.0 L 129.0,149.0 L 140.5,149.0 L 152.0,149.0 L 163.5,149.0 L 175.0,149.0 L 186.5,149.0 L 198.0,149.0 L 209.5,149.0 L 221.0,149.0 L 232.5,149.0 L 244.0,149.0 L 255.5,149.0 L 267.0,149.0 L 278.5,149.0 L 290.0,149.0 L 301.5,149.0 L 313.0,149.0 L 324.5,149.0 L 336.0,149.0 L 347.5,149.0 L 359.0,149.0 L 370.5,149.0 L 382.0,149.0 L 393.5,149.0 L 405.0,149.0 L 416.50000000000006,149.0 L 428.0,149.0 L 439.50000000000006,149.0 L 451.0,149.0 L 462.5,149.0 L 474.0,149.0 L 485.5,149.0 L 497.0,149.0 L 508.5,149.0 L 520.0,149.0 L 531.5,149.0 L 543.0,149.0 L 554.5,149.0 L 566.0,149.0 L 577.5,149.0 L 589.0,149.0 L 600.5,149.0 L 612.0,149.0 L 623.5,149.0 L 635.0,149.0 L 646.5,149.0 L 658.0,149.0 L 669.5,149.0 L 681.0,149.0 L 692.5,149.0 L 704.0,149.0 L 715.5,120.0 L 727.0,100.0 L 738.5,140.0 L 750.0,60.0" fill="none" stroke="#ff007f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100">
-    <animate attributeName="stroke-dashoffset" values="100;0;0" keyTimes="0;0.7;1" dur="2.5s" repeatCount="indefinite" />
+    <animate attributeName="stroke-dashoffset" values="100;0;0" keyTimes="0;0.6;1" dur="1.5s" repeatCount="indefinite" />
   </path>
 </svg>

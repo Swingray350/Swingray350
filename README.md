@@ -88,7 +88,7 @@
 <div align="center">
 
 <img height="175em" src="https://github-readme-stats.vercel.app/api?username=Swingray350&show_icons=true&bg_color=0d0221&title_color=00f2fe&text_color=e0e0e0&icon_color=ff007f&border_color=ff007f&hide_border=false&ring_color=00f2fe" />
-<img height="175em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Swingray350&layout=compact&bg_color=0d0221&title_color=00f2fe&text_color=e0e0e0&border_color=00f2fe&hide_border=false" />
+<img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Swingray350&layout=compact&bg_color=0d0221&title_color=00f2fe&text_color=e0e0e0&border_color=00f2fe&hide_border=false" />
 
 <br/>
 

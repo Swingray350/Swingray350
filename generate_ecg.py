@@ -72,9 +72,9 @@ for val in y_tick_values:
     y_ticks += f'<line x1="55" y1="{y}" x2="60" y2="{y}" stroke="#7928ca" stroke-width="1"/>\n  '
     y_ticks += f'<text x="50" y="{y + 3}" fill="#7928ca" font-family="monospace" font-size="10" text-anchor="end">{val}</text>\n  '
 
-# X軸の目盛り生成 (-60d, -45d, -30d, -15d, Today)
+# X軸の目盛り生成 (-60d 〜 Today まで5日刻み)
 x_ticks = ""
-for i in [0, 15, 30, 45, 60]:
+for i in range(0, 61, 5):
     x = 60 + (i / 60) * 690
     label = "Today" if i == 60 else f"-{60 - i}d"
     x_ticks += f'<line x1="{x}" y1="150" x2="{x}" y2="155" stroke="#7928ca" stroke-width="1"/>\n  '
@@ -104,7 +104,7 @@ svg_content = f"""<svg width="{width}" height="{height}" viewBox="0 0 {width} {h
 
   <!-- 左端から描画され、完成したら消えてループするネオンライン -->
   <path d="{path_d}" fill="none" stroke="#ff007f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100">
-    <animate attributeName="stroke-dashoffset" values="100;0;0" keyTimes="0;0.7;1" dur="2.5s" repeatCount="indefinite" />
+    <animate attributeName="stroke-dashoffset" values="100;0;0" keyTimes="0;0.6;1" dur="1.5s" repeatCount="indefinite" />
   </path>
 </svg>
 """
