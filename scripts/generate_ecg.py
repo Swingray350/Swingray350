@@ -2,6 +2,7 @@ import os
 import requests
 import math
 from datetime import datetime
+from pathlib import Path
 
 # GitHub API設定
 TOKEN = os.environ.get("GH_TOKEN")
@@ -109,5 +110,8 @@ svg_content = f"""<svg width="{width}" height="{height}" viewBox="0 0 {width} {h
 </svg>
 """
 
-with open("ecg-graph.svg", "w") as f:
+# スクリプトの位置からリポジトリルートのassets配下へ出力する（実行ディレクトリ依存を防ぐ）
+output_path = Path(__file__).resolve().parent.parent / "assets" / "ecg-graph.svg"
+output_path.parent.mkdir(parents=True, exist_ok=True)
+with open(output_path, "w", encoding="utf-8") as f:
     f.write(svg_content)

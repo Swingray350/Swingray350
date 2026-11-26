@@ -4,7 +4,7 @@
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:00ffb2,50:00f6ff,100:00ffb2&height=4" width="100%" />
 
 <!-- メイン看板（上下2行が同期して再描画されるターミナル演出） -->
-<img src="./banner.svg" alt="TSUBAKI SAWATARI - ID: Swingray350" />
+<img src="./assets/banner.svg" alt="TSUBAKI SAWATARI - ID: Swingray350" />
 <br/><br/>
 <!-- SNS・外部リンクボタン -->
 <a href="https://x.com/swtr350_ino" target="_blank">
@@ -84,10 +84,10 @@
 <div align="center">
 
 <img height="175em" src="https://github-readme-stats.vercel.app/api?username=Swingray350&show_icons=true&bg_color=0d0221&title_color=00f2fe&text_color=e0e0e0&icon_color=ff007f&border_color=ff007f&hide_border=false&ring_color=00f2fe" />
-<img height="175em" src="./langs-spectrum.svg" alt="Most Used Languages" />
+<img height="175em" src="./assets/langs-spectrum.svg" alt="Most Used Languages" />
 <br/><br/>
 <!-- カスタム生成されたECG波形グラフ -->
-<img src="./ecg-graph.svg" width="95%" />
+<img src="./assets/ecg-graph.svg" width="95%" />
 
 </div>
 

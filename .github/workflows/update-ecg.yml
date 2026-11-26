@@ -28,17 +28,17 @@ jobs:
       - name: Run ECG Script
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: python generate_ecg.py
+        run: python scripts/generate_ecg.py
 
       - name: Run Languages Spectrum Script
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: python generate_langs.py
+        run: python scripts/generate_langs.py
 
       - name: Commit and Push SVG
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add ecg-graph.svg langs-spectrum.svg
+          git add assets/ecg-graph.svg assets/langs-spectrum.svg
           git commit -m "Update profile SVGs" || exit 0
           git push

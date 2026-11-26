@@ -1,12 +1,14 @@
 import math
 import os
+from pathlib import Path
 from xml.sax.saxutils import escape
 
 import requests
 
 # テーマ設定と定数
 USERNAME = "Swingray350"
-OUTPUT_PATH = "langs-spectrum.svg"
+# スクリプトの位置からリポジトリルートのassets配下へ出力する（実行ディレクトリ依存を防ぐ）
+OUTPUT_PATH = Path(__file__).resolve().parent.parent / "assets" / "langs-spectrum.svg"
 N_BARS = 90
 MAX_SLICES = 5
 NEON_PALETTE = ["#ff007f", "#00f2fe", "#00ffb2", "#a855f7", "#f9f871", "#ff6b35"]
@@ -275,6 +277,7 @@ def main() -> None:
     token = os.environ.get("GH_TOKEN")
     lang_bytes = fetch_language_stats(USERNAME, token)
     svg_content = build_spectrum_svg(lang_bytes)
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write(svg_content)
 
