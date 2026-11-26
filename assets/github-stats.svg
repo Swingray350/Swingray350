@@ -1,0 +1,129 @@
+<svg width="465" height="230" viewBox="0 0 465 230" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 棒グラフ・ゲージ・針にサイバーパンク風のネオン発光効果を与える -->
+    <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- 扇型ゲージの低ランクから高ランクにかけてネオン色を遷移させる -->
+    <linearGradient id="gauge-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7928ca"/>
+      <stop offset="50%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#ff007f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 外枠と背景（隣のMost Used Languagesカードと高さ・角丸・配色を統一） -->
+  <rect x="0.5" y="0.5" width="464" height="229" rx="4.5" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
+
+  <!-- カードタイトル -->
+  <text x="18" y="29" fill="#00f2fe" font-family="monospace" font-size="16.5" font-weight="bold">Swingray350's GitHub Stats</text>
+
+  <!-- 左側：項目ごとの横棒グラフ -->
+  <text x="18" y="58" fill="#e0e0e0" font-family="monospace" font-size="12.5">STARS</text>
+  <text x="266" y="58" fill="#f9f871" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">18</text>
+  <rect x="18" y="64" width="248" height="7" rx="3.5" fill="#2a1650" opacity="0.75"/>
+  <rect x="18" y="64" width="24.8" height="7" rx="3.5" fill="#f9f871" filter="url(#neon-glow)">
+    <animate attributeName="width" from="0" to="24.8" dur="0.8s" fill="freeze" />
+  </rect>
+  <line x1="80.0" y1="64" x2="80.0" y2="71" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <line x1="142.0" y1="64" x2="142.0" y2="71" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <line x1="204.0" y1="64" x2="204.0" y2="71" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <text x="18" y="90" fill="#e0e0e0" font-family="monospace" font-size="12.5">COMMITS</text>
+  <text x="266" y="90" fill="#00f2fe" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">164</text>
+  <rect x="18" y="96" width="248" height="7" rx="3.5" fill="#2a1650" opacity="0.75"/>
+  <rect x="18" y="96" width="226" height="7" rx="3.5" fill="#00f2fe" filter="url(#neon-glow)">
+    <animate attributeName="width" from="0" to="226" dur="0.8s" fill="freeze" />
+  </rect>
+  <line x1="80.0" y1="96" x2="80.0" y2="103" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <line x1="142.0" y1="96" x2="142.0" y2="103" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <line x1="204.0" y1="96" x2="204.0" y2="103" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <text x="18" y="122" fill="#e0e0e0" font-family="monospace" font-size="12.5">PRs</text>
+  <text x="266" y="122" fill="#ff007f" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">27</text>
+  <rect x="18" y="128" width="248" height="7" rx="3.5" fill="#2a1650" opacity="0.75"/>
+  <rect x="18" y="128" width="37.2" height="7" rx="3.5" fill="#ff007f" filter="url(#neon-glow)">
+    <animate attributeName="width" from="0" to="37.2" dur="0.8s" fill="freeze" />
+  </rect>
+  <line x1="80.0" y1="128" x2="80.0" y2="135" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <line x1="142.0" y1="128" x2="142.0" y2="135" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <line x1="204.0" y1="128" x2="204.0" y2="135" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <text x="18" y="154" fill="#e0e0e0" font-family="monospace" font-size="12.5">ISSUES</text>
+  <text x="266" y="154" fill="#a855f7" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">14</text>
+  <rect x="18" y="160" width="248" height="7" rx="3.5" fill="#2a1650" opacity="0.75"/>
+  <rect x="18" y="160" width="19.3" height="7" rx="3.5" fill="#a855f7" filter="url(#neon-glow)">
+    <animate attributeName="width" from="0" to="19.3" dur="0.8s" fill="freeze" />
+  </rect>
+  <line x1="80.0" y1="160" x2="80.0" y2="167" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <line x1="142.0" y1="160" x2="142.0" y2="167" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <line x1="204.0" y1="160" x2="204.0" y2="167" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <text x="18" y="186" fill="#e0e0e0" font-family="monospace" font-size="12.5">CONTRIB</text>
+  <text x="266" y="186" fill="#00ffb2" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">9</text>
+  <rect x="18" y="192" width="248" height="7" rx="3.5" fill="#2a1650" opacity="0.75"/>
+  <rect x="18" y="192" width="12.4" height="7" rx="3.5" fill="#00ffb2" filter="url(#neon-glow)">
+    <animate attributeName="width" from="0" to="12.4" dur="0.8s" fill="freeze" />
+  </rect>
+  <line x1="80.0" y1="192" x2="80.0" y2="199" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <line x1="142.0" y1="192" x2="142.0" y2="199" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+  <line x1="204.0" y1="192" x2="204.0" y2="199" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
+
+  <!-- 横棒グラフのX軸ラインと目盛り -->
+  <line x1="18" y1="207" x2="266" y2="207" stroke="#7928ca" stroke-width="1" opacity="0.8"/>
+  <text x="18" y="221" fill="#7928ca" font-family="monospace" font-size="10.5" text-anchor="start">0</text>
+  <text x="142" y="221" fill="#7928ca" font-family="monospace" font-size="10.5" text-anchor="middle">90</text>
+  <text x="266" y="221" fill="#7928ca" font-family="monospace" font-size="10.5" text-anchor="end">180</text>
+
+  <!-- 右側：240度扇型ランクゲージ（背景アークと達成度アーク） -->
+  <circle cx="370" cy="138" r="58" fill="none" stroke="#2a1650" stroke-width="8.5" stroke-linecap="round" stroke-dasharray="242.95 364.42" transform="rotate(150 370 138)"/>
+  <circle cx="370" cy="138" r="58" fill="none" stroke="url(#gauge-grad)" stroke-width="8.5" stroke-linecap="round" filter="url(#neon-glow)" stroke-dasharray="82.51 364.42" transform="rotate(150 370 138)">
+    <animate attributeName="stroke-dasharray" from="0.00 364.42" to="82.51 364.42" dur="0.9s" fill="freeze" />
+  </circle>
+
+  <!-- 扇型ゲージ周囲の目盛りとランク文字 -->
+  <line x1="314.6" y1="170.0" x2="308.5" y2="173.5" stroke="#00f2fe" stroke-width="1.5"/>
+  <line x1="308.9" y1="160.2" x2="305.2" y2="161.6" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="306.0" y1="149.3" x2="302.0" y2="150.0" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="305.0" y1="138.0" x2="301.0" y2="138.0" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="306.0" y1="126.7" x2="302.0" y2="126.0" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="308.9" y1="115.8" x2="305.2" y2="114.4" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="314.6" y1="106.0" x2="308.5" y2="102.5" stroke="#00f2fe" stroke-width="1.5"/>
+  <line x1="320.2" y1="96.2" x2="317.1" y2="93.6" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="328.2" y1="88.2" x2="325.6" y2="85.1" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="337.5" y1="81.7" x2="335.5" y2="78.2" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="347.8" y1="76.9" x2="346.4" y2="73.2" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="358.7" y1="74.0" x2="358.0" y2="70.0" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="370.0" y1="74.0" x2="370.0" y2="67.0" stroke="#00f2fe" stroke-width="1.5"/>
+  <line x1="381.3" y1="74.0" x2="382.0" y2="70.0" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="392.2" y1="76.9" x2="393.6" y2="73.2" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="402.5" y1="81.7" x2="404.5" y2="78.2" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="411.8" y1="88.2" x2="414.4" y2="85.1" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="419.8" y1="96.2" x2="422.9" y2="93.6" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="425.4" y1="106.0" x2="431.5" y2="102.5" stroke="#00f2fe" stroke-width="1.5"/>
+  <line x1="431.1" y1="115.8" x2="434.8" y2="114.4" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="434.0" y1="126.7" x2="438.0" y2="126.0" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="435.0" y1="138.0" x2="439.0" y2="138.0" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="434.0" y1="149.3" x2="438.0" y2="150.0" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="431.1" y1="160.2" x2="434.8" y2="161.6" stroke="#7928ca" stroke-width="1" opacity="0.85"/>
+  <line x1="425.4" y1="170.0" x2="431.5" y2="173.5" stroke="#00f2fe" stroke-width="1.5"/>
+  <text x="300.7" y="178.0" fill="#e0e0e0" font-family="monospace" font-size="10.5" font-weight="bold" text-anchor="middle" dominant-baseline="central">C</text>
+  <text x="300.7" y="98.0" fill="#e0e0e0" font-family="monospace" font-size="10.5" font-weight="bold" text-anchor="middle" dominant-baseline="central">B</text>
+  <text x="370.0" y="58.0" fill="#e0e0e0" font-family="monospace" font-size="10.5" font-weight="bold" text-anchor="middle" dominant-baseline="central">A</text>
+  <text x="439.3" y="98.0" fill="#e0e0e0" font-family="monospace" font-size="10.5" font-weight="bold" text-anchor="middle" dominant-baseline="central">S</text>
+  <text x="439.3" y="178.0" fill="#e0e0e0" font-family="monospace" font-size="10.5" font-weight="bold" text-anchor="middle" dominant-baseline="central">S+</text>
+
+  <!-- 達成度を示す針（目標位置付近で微細に揺れる計器演出） -->
+  <g transform="translate(370,138)">
+    <g transform="rotate(-38.49)">
+      <polygon points="0,-53 -3.2,8 0,12 3.2,8" fill="#ff007f" filter="url(#neon-glow)"/>
+      <animateTransform attributeName="transform" type="rotate" values="-38.49;-37.09;-39.59;-37.69;-40.09;-38.49" dur="2.6s" repeatCount="indefinite" />
+    </g>
+  </g>
+  <circle cx="370" cy="138" r="6" fill="#00f2fe"/>
+  <circle cx="370" cy="138" r="2.8" fill="#0d0221"/>
+
+  <!-- 扇型下部のランク・達成度サマリー -->
+  <text x="370" y="186" fill="#00f2fe" font-family="monospace" font-size="18.5" font-weight="bold" text-anchor="middle" filter="url(#neon-glow)">RANK B</text>
+  <text x="370" y="206" fill="#ff007f" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">34.0%</text>
+</svg>

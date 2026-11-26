@@ -35,10 +35,15 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: python scripts/generate_langs.py
 
+      - name: Run GitHub Stats Script
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python scripts/generate_stats.py
+
       - name: Commit and Push SVG
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add assets/ecg-graph.svg assets/langs-spectrum.svg
+          git add assets/ecg-graph.svg assets/langs-spectrum.svg assets/github-stats.svg
           git commit -m "Update profile SVGs" || exit 0
           git push

@@ -83,8 +83,8 @@
 
 <div align="center">
 
-<img height="175em" src="https://github-readme-stats.vercel.app/api?username=Swingray350&show_icons=true&bg_color=0d0221&title_color=00f2fe&text_color=e0e0e0&icon_color=ff007f&border_color=ff007f&hide_border=false&ring_color=00f2fe" />
-<img height="175em" src="./assets/langs-spectrum.svg" alt="Most Used Languages" />
+<img height="205em" src="./assets/github-stats.svg" alt="Swingray350's GitHub Stats" />
+<img height="205em" src="./assets/langs-spectrum.svg" alt="Most Used Languages" />
 <br/><br/>
 <!-- カスタム生成されたECG波形グラフ -->
 <img src="./assets/ecg-graph.svg" width="95%" />
@@ -118,7 +118,7 @@
 
 <br/><br/>
 
-<!-- 下部のネオンフレーム（パープル） -->
+<!-- 下部のネオンフレーム -->
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:00ffb2,50:00f6ff,100:00ffb2&height=4" width="100%" />
 
 </div>

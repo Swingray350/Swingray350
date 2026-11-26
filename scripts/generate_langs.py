@@ -162,8 +162,8 @@ def build_spectrum_svg(lang_bytes: dict[str, int]) -> str:
     items = aggregate_languages(lang_bytes)
     bar_counts = allocate_bars(items, N_BARS)
 
-    cx, cy = 92, 114
-    ring_r = 34
+    cx, cy = 104, 132
+    ring_r = 39
     circumference = 2.0 * math.pi * ring_r
     gap = 1.2 if len(items) > 1 else 0.0
 
@@ -175,7 +175,7 @@ def build_spectrum_svg(lang_bytes: dict[str, int]) -> str:
         seg_len = max(0.5, arc_total - gap)
         ring_segments.append(
             f'  <circle cx="{cx}" cy="{cy}" r="{ring_r}" fill="none" stroke="{color}" '
-            f'stroke-width="3.5" stroke-dasharray="{seg_len:.2f} {circumference:.2f}" '
+            f'stroke-width="4" stroke-dasharray="{seg_len:.2f} {circumference:.2f}" '
             f'stroke-dashoffset="{-accumulated:.2f}" transform="rotate(-90 {cx} {cy})" opacity="0.9"/>'
         )
         accumulated += arc_total
@@ -196,10 +196,10 @@ def build_spectrum_svg(lang_bytes: dict[str, int]) -> str:
             u = 0.72 * r_self + 0.28 * r_band
             if u > 0.78:
                 # 音圧のピークらしい鋭いスパイクを外側へ突出させる
-                raw_w = 17.5 + ((u - 0.78) / 0.22) * 7.0
+                raw_w = 18.0 + ((u - 0.78) / 0.22) * 7.0
             else:
-                raw_w = 2.5 + (u ** 1.7) * 18.0
-            w_s = round(max(2.5, min(24.5, raw_w)), 1)
+                raw_w = 3.5 + (u ** 1.7) * 18.0
+            w_s = round(max(3.5, min(25.0, raw_w)), 1)
             widths.append(f"{w_s}")
         # 始点と同じ値で終端を閉じることでループ継ぎ目のジャンプを防ぐ
         values_attr = ";".join(widths + [widths[0]])
@@ -208,7 +208,7 @@ def build_spectrum_svg(lang_bytes: dict[str, int]) -> str:
 
         bar_elements.append(
             f'    <g transform="translate({cx},{cy}) rotate({angle})">\n'
-            f'      <rect x="40" y="-0.75" width="{widths[0]}" height="1.5" rx="0.75" fill="{color}" opacity="0.92">\n'
+            f'      <rect x="45" y="-0.85" width="{widths[0]}" height="1.7" rx="0.85" fill="{color}" opacity="0.92">\n'
             f'        <animate attributeName="width" values="{values_attr}" dur="{dur}s" begin="-{begin_offset}s" repeatCount="indefinite" />\n'
             f'      </rect>\n'
             f'    </g>'
@@ -216,26 +216,26 @@ def build_spectrum_svg(lang_bytes: dict[str, int]) -> str:
 
     # 3. 中央の最多言語サマリー
     top_name, _, top_pct, _ = items[0]
-    top_label = escape(_truncate(top_name, 10))
+    top_label = escape(_truncate(top_name, 9))
 
-    # 4. 右側の凡例リスト（縦中央揃え）
+    # 4. 右側の凡例リスト（縦中央揃え・文字サイズ拡大）
     m = len(items)
-    start_y = cy - ((m - 1) * 22.0) / 2.0
+    start_y = cy - ((m - 1) * 28.0) / 2.0
     legend_elements: list[str] = []
     for idx, (name, _, pct, color) in enumerate(items):
-        y = start_y + idx * 22.0
-        label = escape(_truncate(name, 12))
+        y = start_y + idx * 28.0
+        label = escape(_truncate(name, 11))
         legend_elements.append(
-            f'  <rect x="174" y="{y - 5.0:.1f}" width="8" height="8" rx="2" fill="{color}"/>\n'
-            f'  <text x="188" y="{y + 3.0:.1f}" fill="#e0e0e0" font-family="monospace" font-size="11">{label}</text>\n'
-            f'  <text x="324" y="{y + 3.0:.1f}" fill="{color}" font-family="monospace" font-size="11" font-weight="bold" text-anchor="end">{pct:.1f}%</text>'
+            f'  <rect x="194" y="{y - 5.5:.1f}" width="10" height="10" rx="2.5" fill="{color}"/>\n'
+            f'  <text x="211" y="{y + 4.5:.1f}" fill="#e0e0e0" font-family="monospace" font-size="14">{label}</text>\n'
+            f'  <text x="382" y="{y + 4.5:.1f}" fill="{color}" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">{pct:.1f}%</text>'
         )
 
     rings_block = "\n".join(ring_segments)
     bars_block = "\n".join(bar_elements)
     legends_block = "\n".join(legend_elements)
 
-    return f"""<svg width="340" height="195" viewBox="0 0 340 195" xmlns="http://www.w3.org/2000/svg">
+    return f"""<svg width="400" height="230" viewBox="0 0 400 230" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- スペクトラムバーにサイバーパンク風のネオン発光効果を与える -->
     <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
@@ -248,18 +248,18 @@ def build_spectrum_svg(lang_bytes: dict[str, int]) -> str:
   </defs>
 
   <!-- 外枠と背景（隣のGitHub Statsカードと統一した配色・角丸） -->
-  <rect x="0.5" y="0.5" width="339" height="194" rx="4.5" fill="#0d0221" stroke="#00f2fe" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="399" height="229" rx="4.5" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
 
-  <!-- カードタイトル -->
-  <text x="18" y="27" fill="#00f2fe" font-family="monospace" font-size="14" font-weight="bold">Most Used Languages</text>
+  <!-- カードタイトル（隣のGitHub Statsカードと見出し位置・サイズを統一） -->
+  <text x="18" y="29" fill="#00f2fe" font-family="monospace" font-size="16.5" font-weight="bold">Most Used Languages</text>
 
   <!-- 内側ベースドーナツリングと装飾点線リング -->
 {rings_block}
-  <circle cx="{cx}" cy="{cy}" r="27" fill="none" stroke="#7928ca" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+  <circle cx="{cx}" cy="{cy}" r="31" fill="none" stroke="#7928ca" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
 
   <!-- 円中央の最多言語表示 -->
-  <text x="{cx}" y="111" fill="#00f2fe" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle">{top_pct:.0f}%</text>
-  <text x="{cx}" y="125" fill="#e0e0e0" font-family="monospace" font-size="8.5" text-anchor="middle" opacity="0.85">{top_label}</text>
+  <text x="{cx}" y="128" fill="#00f2fe" font-family="monospace" font-size="16.5" font-weight="bold" text-anchor="middle">{top_pct:.0f}%</text>
+  <text x="{cx}" y="146" fill="#e0e0e0" font-family="monospace" font-size="11" text-anchor="middle" opacity="0.9">{top_label}</text>
 
   <!-- 外側放射状オーディオスペクトラムバー（90本・高速ランダム脈動） -->
   <g filter="url(#neon-glow)">
