@@ -1,0 +1,103 @@
+<svg width="560" height="195" viewBox="0 0 560 195" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- セグメント・数値・ランプにサイバーパンク風のネオン発光効果を与える -->
+    <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- 点灯中のシェブロンバー内を走る光の帯 -->
+    <linearGradient id="pulse-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="chev-clip">
+      <polygon points="29.0,78 45.5,78 40.5,102 24.0,102"/>
+      <polygon points="50.2,78 66.7,78 61.7,102 45.2,102"/>
+      <polygon points="71.4,78 87.9,78 82.9,102 66.4,102"/>
+      <polygon points="92.6,78 109.1,78 104.1,102 87.6,102"/>
+      <polygon points="113.8,78 130.3,78 125.3,102 108.8,102"/>
+      <polygon points="135.0,78 151.5,78 146.5,102 130.0,102"/>
+      <polygon points="156.2,78 172.7,78 167.7,102 151.2,102"/>
+      <polygon points="177.4,78 193.9,78 188.9,102 172.4,102"/>
+      <polygon points="198.6,78 215.1,78 210.1,102 193.6,102"/>
+      <polygon points="219.8,78 236.3,78 231.3,102 214.8,102"/>
+      <polygon points="241.0,78 257.5,78 252.5,102 236.0,102"/>
+      <polygon points="262.2,78 278.7,78 273.7,102 257.2,102"/>
+      <polygon points="283.4,78 299.9,78 294.9,102 278.4,102"/>
+      <polygon points="304.6,78 321.1,78 316.1,102 299.6,102"/>
+      <polygon points="325.8,78 342.3,78 337.3,102 320.8,102"/>
+      <polygon points="347.0,78 363.5,78 358.5,102 342.0,102"/>
+      <polygon points="368.2,78 384.7,78 379.7,102 363.2,102"/>
+      <polygon points="389.4,78 405.9,78 400.9,102 384.4,102"/>
+      <polygon points="410.6,78 427.1,78 422.1,102 405.6,102"/>
+      <polygon points="431.8,78 448.3,78 443.3,102 426.8,102"/>
+      <polygon points="453.0,78 469.5,78 464.5,102 448.0,102"/>
+      <polygon points="474.2,78 490.7,78 485.7,102 469.2,102"/>
+      <polygon points="495.4,78 511.9,78 506.9,102 490.4,102"/>
+      <polygon points="516.6,78 533.1,78 528.1,102 511.6,102"/>
+    </clipPath>
+  </defs>
+
+  <!-- 外枠と背景 -->
+  <rect x="0.5" y="0.5" width="559" height="194" rx="4.5" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
+
+  <!-- ヘッダーと稼働ステータスランプ -->
+  <text x="24" y="27" fill="#00f2fe" font-family="monospace" font-size="14" font-weight="bold">STREAK // OVERDRIVE METER</text>
+  <circle cx="440.2" cy="22" r="3.2" fill="#f9f871" filter="url(#neon-glow)">
+    <animate attributeName="opacity" values="1;0.25;1" dur="1.4s" repeatCount="indefinite" />
+  </circle>
+  <text x="536" y="26" fill="#f9f871" font-family="monospace" font-size="11" font-weight="bold" text-anchor="end">OVERDRIVE MAX</text>
+
+  <!-- メイン指標（Current Streak vs Target Record） -->
+  <text x="24" y="63" fill="#ff007f" font-family="monospace" font-size="22" font-weight="bold" filter="url(#neon-glow)">CURRENT: 4 DAYS</text>
+  <text x="536" y="62" fill="#00f2fe" font-family="monospace" font-size="13.5" font-weight="bold" text-anchor="end">TARGET RECORD: 4 DAYS (100%)</text>
+
+  <!-- 24セグメント斜めシェブロンチャージバー -->
+  <polygon points="29.0,78 45.5,78 40.5,102 24.0,102" fill="#00f2fe" filter="url(#neon-glow)"/>
+  <polygon points="50.2,78 66.7,78 61.7,102 45.2,102" fill="#00f2fe" filter="url(#neon-glow)"/>
+  <polygon points="71.4,78 87.9,78 82.9,102 66.4,102" fill="#00f2fe" filter="url(#neon-glow)"/>
+  <polygon points="92.6,78 109.1,78 104.1,102 87.6,102" fill="#00f2fe" filter="url(#neon-glow)"/>
+  <polygon points="113.8,78 130.3,78 125.3,102 108.8,102" fill="#00f2fe" filter="url(#neon-glow)"/>
+  <polygon points="135.0,78 151.5,78 146.5,102 130.0,102" fill="#00f2fe" filter="url(#neon-glow)"/>
+  <polygon points="156.2,78 172.7,78 167.7,102 151.2,102" fill="#00f2fe" filter="url(#neon-glow)"/>
+  <polygon points="177.4,78 193.9,78 188.9,102 172.4,102" fill="#00f2fe" filter="url(#neon-glow)"/>
+  <polygon points="198.6,78 215.1,78 210.1,102 193.6,102" fill="#a855f7" filter="url(#neon-glow)"/>
+  <polygon points="219.8,78 236.3,78 231.3,102 214.8,102" fill="#a855f7" filter="url(#neon-glow)"/>
+  <polygon points="241.0,78 257.5,78 252.5,102 236.0,102" fill="#a855f7" filter="url(#neon-glow)"/>
+  <polygon points="262.2,78 278.7,78 273.7,102 257.2,102" fill="#a855f7" filter="url(#neon-glow)"/>
+  <polygon points="283.4,78 299.9,78 294.9,102 278.4,102" fill="#a855f7" filter="url(#neon-glow)"/>
+  <polygon points="304.6,78 321.1,78 316.1,102 299.6,102" fill="#a855f7" filter="url(#neon-glow)"/>
+  <polygon points="325.8,78 342.3,78 337.3,102 320.8,102" fill="#a855f7" filter="url(#neon-glow)"/>
+  <polygon points="347.0,78 363.5,78 358.5,102 342.0,102" fill="#a855f7" filter="url(#neon-glow)"/>
+  <polygon points="368.2,78 384.7,78 379.7,102 363.2,102" fill="#ff007f" filter="url(#neon-glow)"/>
+  <polygon points="389.4,78 405.9,78 400.9,102 384.4,102" fill="#ff007f" filter="url(#neon-glow)"/>
+  <polygon points="410.6,78 427.1,78 422.1,102 405.6,102" fill="#ff007f" filter="url(#neon-glow)"/>
+  <polygon points="431.8,78 448.3,78 443.3,102 426.8,102" fill="#ff007f" filter="url(#neon-glow)"/>
+  <polygon points="453.0,78 469.5,78 464.5,102 448.0,102" fill="#ff007f" filter="url(#neon-glow)"/>
+  <polygon points="474.2,78 490.7,78 485.7,102 469.2,102" fill="#ff007f" filter="url(#neon-glow)"/>
+  <polygon points="495.4,78 511.9,78 506.9,102 490.4,102" fill="#ff007f" filter="url(#neon-glow)"/>
+  <polygon points="516.6,78 533.1,78 528.1,102 511.6,102" fill="#ff007f" filter="url(#neon-glow)"/>
+  <!-- 点灯済みセグメントを自然な加減速で左→右へ走るエネルギーパルス -->
+  <g clip-path="url(#chev-clip)">
+    <rect x="-40" y="76" width="70" height="28" fill="url(#pulse-grad)">
+      <animate attributeName="x" values="-40;552.8;552.8" keyTimes="0;0.58;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1" dur="2.2s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- 右端ゴールマーカー -->
+  <line x1="536" y1="74" x2="536" y2="108" stroke="#00ffb2" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <text x="536" y="118" fill="#00ffb2" font-family="monospace" font-size="9" font-weight="bold" text-anchor="end">BEST</text>
+
+  <!-- 下部2サブパネル（Total Contributionsを除外しStreak情報に特化） -->
+  <rect x="24" y="130" width="248" height="48" rx="4" fill="#140630" stroke="#7928ca" stroke-width="1" stroke-opacity="0.7"/>
+  <text x="148" y="147" fill="#7928ca" font-family="monospace" font-size="10.5" font-weight="bold" text-anchor="middle">CURRENT SPAN</text>
+  <text x="148" y="168" fill="#e0e0e0" font-family="monospace" font-size="14" font-weight="bold" text-anchor="middle">Nov 24 - Nov 27</text>
+
+  <rect x="288" y="130" width="248" height="48" rx="4" fill="#140630" stroke="#7928ca" stroke-width="1" stroke-opacity="0.7"/>
+  <text x="412" y="147" fill="#7928ca" font-family="monospace" font-size="10.5" font-weight="bold" text-anchor="middle">BEST: Nov 24 - Nov 27</text>
+  <text x="412" y="168" fill="#f9f871" font-family="monospace" font-size="15" font-weight="bold" text-anchor="middle" filter="url(#neon-glow)">NEW RECORD!</text>
+</svg>

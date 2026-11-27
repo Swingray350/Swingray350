@@ -114,7 +114,8 @@
 
 <div align="center">
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Swingray350&background=0d0221&border=ff007f&stroke=00f2fe&ring=7928ca&fire=ff007f&currStreakNum=00f2fe&sideNums=e0e0e0&currStreakLabel=7928ca&sideLabels=7928ca&dates=e0e0e0&hide_border=false" alt="GitHub Streak" />
+<img src="./assets/github-streak.svg" alt="GitHub Streak" />
+<img src="./assets/total-contributions.svg" alt="Total Contributions" />
 
 <br/><br/>
 
