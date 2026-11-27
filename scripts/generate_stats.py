@@ -153,7 +153,8 @@ def build_stats_svg(stats: dict[str, int]) -> str:
     track_w = 248.0
 
     bar_elements: list[str] = []
-    for label, val, color, y in bar_specs:
+    clip_defs: list[str] = []
+    for idx, (label, val, color, y) in enumerate(bar_specs):
         bar_w = round(max(4.0, (val / axis_max) * track_w), 1) if val > 0 else 0.0
         bar_y = y + 6
         # セグメント刻み線（25%, 50%, 75%）を重ねてデジタル計器感を出す
@@ -162,13 +163,22 @@ def build_stats_svg(stats: dict[str, int]) -> str:
             f'  <line x1="{tx:.1f}" y1="{bar_y}" x2="{tx:.1f}" y2="{bar_y + 7}" stroke="#0d0221" stroke-width="1" opacity="0.85"/>'
             for tx in ticks_x
         )
-        bar_rect = (
-            f'  <rect x="{track_x:.0f}" y="{bar_y}" width="{bar_w}" height="7" rx="3.5" fill="{color}" filter="url(#neon-glow)">\n'
-            f'    <animate attributeName="width" from="0" to="{bar_w}" dur="0.8s" fill="freeze" />\n'
-            f"  </rect>"
-            if bar_w > 0
-            else ""
-        )
+        if bar_w > 0:
+            clip_defs.append(
+                f'    <clipPath id="clip-bar-{idx}"><rect x="{track_x:.0f}" y="{bar_y}" width="{bar_w}" height="7" rx="3.5"/></clipPath>'
+            )
+            end_x = round(track_x + bar_w + 4.0, 1)
+            delay = round(idx * 0.25, 2)
+            bar_rect = (
+                f'  <rect x="{track_x:.0f}" y="{bar_y}" width="{bar_w}" height="7" rx="3.5" fill="{color}" filter="url(#neon-glow)"/>\n'
+                f'  <g clip-path="url(#clip-bar-{idx})">\n'
+                f'    <rect x="-18" y="{bar_y}" width="36" height="7" fill="url(#pulse-grad)">\n'
+                f'      <animate attributeName="x" values="-18;{end_x};{end_x}" keyTimes="0;0.58;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1" dur="2.4s" begin="{delay}s" repeatCount="indefinite" />\n'
+                f"    </rect>\n"
+                f"  </g>"
+            )
+        else:
+            bar_rect = ""
         bar_elements.append(
             f'  <text x="18" y="{y}" fill="#e0e0e0" font-family="monospace" font-size="14">{label}</text>\n'
             f'  <text x="266" y="{y}" fill="{color}" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">{val}</text>\n'
@@ -213,12 +223,15 @@ def build_stats_svg(stats: dict[str, int]) -> str:
             f'  <text x="{lx:.1f}" y="{ly:.1f}" fill="#e0e0e0" font-family="monospace" font-size="10.5" font-weight="bold" text-anchor="middle" dominant-baseline="central">{lbl}</text>'
         )
 
-    # 気圧計・タコメータのように目標角度付近で微細に揺れる針のアニメーション
+    # アナログ計器のように目標角度付近で大きく不規則にぐらつく針（イーズインアウト加減速付き）
     needle_angle = -120.0 + progress * 240.0
-    deltas = (0.0, 1.4, -1.1, 0.8, -1.6, 0.0)
+    deltas = (0.0, 5.2, -3.5, 6.0, -2.2, 3.4, -4.5, 2.0, 0.0)
     angles = [round(max(-120.0, min(120.0, needle_angle + d)), 2) for d in deltas]
     needle_values = ";".join(f"{a}" for a in angles)
+    needle_key_times = "0;0.11;0.24;0.39;0.52;0.66;0.80;0.91;1"
+    needle_key_splines = ";".join(["0.42 0 0.58 1"] * 8)
 
+    clips_block = "\n".join(clip_defs)
     bars_block = "\n".join(bar_elements)
     ticks_block = "\n".join(gauge_ticks)
     labels_block = "\n".join(rank_labels)
@@ -239,6 +252,13 @@ def build_stats_svg(stats: dict[str, int]) -> str:
       <stop offset="50%" stop-color="#00f2fe"/>
       <stop offset="100%" stop-color="#ff007f"/>
     </linearGradient>
+    <!-- バー内部を左から右へ駆け抜けるエネルギーパルス用の光の帯 -->
+    <linearGradient id="pulse-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
+    </linearGradient>
+{clips_block}
   </defs>
 
   <!-- 外枠と背景（隣のMost Used Languagesカードと高さ・角丸・配色を統一） -->
@@ -258,19 +278,25 @@ def build_stats_svg(stats: dict[str, int]) -> str:
 
   <!-- 右側：240度扇型ランクゲージ（背景アークと達成度アーク） -->
   <circle cx="{cx}" cy="{cy}" r="{gauge_r:.0f}" fill="none" stroke="#2a1650" stroke-width="8.5" stroke-linecap="round" stroke-dasharray="{arc_240:.2f} {circumference:.2f}" transform="rotate(150 {cx} {cy})"/>
-  <circle cx="{cx}" cy="{cy}" r="{gauge_r:.0f}" fill="none" stroke="url(#gauge-grad)" stroke-width="8.5" stroke-linecap="round" filter="url(#neon-glow)" stroke-dasharray="{fill_len:.2f} {circumference:.2f}" transform="rotate(150 {cx} {cy})">
-    <animate attributeName="stroke-dasharray" from="0.00 {circumference:.2f}" to="{fill_len:.2f} {circumference:.2f}" dur="0.9s" fill="freeze" />
-  </circle>
+  <circle cx="{cx}" cy="{cy}" r="{gauge_r:.0f}" fill="none" stroke="url(#gauge-grad)" stroke-width="8.5" stroke-linecap="round" filter="url(#neon-glow)" stroke-dasharray="{fill_len:.2f} {circumference:.2f}" transform="rotate(150 {cx} {cy})"/>
 
   <!-- 扇型ゲージ周囲の目盛りとランク文字 -->
 {ticks_block}
 {labels_block}
 
-  <!-- 達成度を示す針（目標位置付近で微細に揺れる計器演出） -->
+  <!-- 外周目盛りを自然な加減速で走査するスキャン輝線 -->
+  <g transform="translate({cx},{cy})">
+    <line x1="0" y1="-63" x2="0" y2="-72" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" filter="url(#neon-glow)">
+      <animateTransform attributeName="transform" type="rotate" values="-120;120" keyTimes="0;1" calcMode="spline" keySplines="0.45 0.05 0.55 0.95" dur="2.8s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.88;1" dur="2.8s" repeatCount="indefinite" />
+    </line>
+  </g>
+
+  <!-- 達成度を示す針（目標位置付近で自然な加減速で大きくぐらつく計器演出） -->
   <g transform="translate({cx},{cy})">
     <g transform="rotate({angles[0]})">
       <polygon points="0,-53 -3.2,8 0,12 3.2,8" fill="#ff007f" filter="url(#neon-glow)"/>
-      <animateTransform attributeName="transform" type="rotate" values="{needle_values}" dur="2.6s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="{needle_values}" keyTimes="{needle_key_times}" calcMode="spline" keySplines="{needle_key_splines}" dur="3.6s" repeatCount="indefinite" />
     </g>
   </g>
   <circle cx="{cx}" cy="{cy}" r="6" fill="#00f2fe"/>
