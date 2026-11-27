@@ -20,7 +20,7 @@
       <stop offset="50%" stop-color="#ffffff" stop-opacity="0.88"/>
       <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
     </linearGradient>
-    <clipPath id="clip-bar-1"><rect x="18" y="96" width="214.9" height="7" rx="3.5"/></clipPath>
+    <clipPath id="clip-bar-1"><rect x="18" y="96" width="223.2" height="7" rx="3.5"/></clipPath>
     <clipPath id="clip-bar-2"><rect x="18" y="128" width="8.3" height="7" rx="3.5"/></clipPath>
   </defs>
 
@@ -39,12 +39,12 @@
   <line x1="142.0" y1="64" x2="142.0" y2="71" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
   <line x1="204.0" y1="64" x2="204.0" y2="71" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
   <text x="18" y="90" fill="#e0e0e0" font-family="monospace" font-size="14">COMMITS</text>
-  <text x="266" y="90" fill="#00f2fe" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">26</text>
+  <text x="266" y="90" fill="#00f2fe" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">27</text>
   <rect x="18" y="96" width="248" height="7" rx="3.5" fill="#2a1650" opacity="0.75"/>
-  <rect x="18" y="96" width="214.9" height="7" rx="3.5" fill="#00f2fe" filter="url(#neon-glow)"/>
+  <rect x="18" y="96" width="223.2" height="7" rx="3.5" fill="#00f2fe" filter="url(#neon-glow)"/>
   <g clip-path="url(#clip-bar-1)">
     <rect x="-18" y="96" width="36" height="7" fill="url(#pulse-grad)">
-      <animate attributeName="x" values="-18;236.9;236.9" keyTimes="0;0.58;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1" dur="2.4s" begin="0.25s" repeatCount="indefinite" />
+      <animate attributeName="x" values="-18;245.2;245.2" keyTimes="0;0.58;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1" dur="2.4s" begin="0.25s" repeatCount="indefinite" />
     </rect>
   </g>
   <line x1="80.0" y1="96" x2="80.0" y2="103" stroke="#0d0221" stroke-width="1" opacity="0.85"/>
@@ -85,7 +85,7 @@
 
   <!-- 右側：240度扇型ランクゲージ（背景アークと達成度アーク） -->
   <circle cx="370" cy="138" r="58" fill="none" stroke="#2a1650" stroke-width="8.5" stroke-linecap="round" stroke-dasharray="242.95 364.42" transform="rotate(150 370 138)"/>
-  <circle cx="370" cy="138" r="58" fill="none" stroke="url(#gauge-grad)" stroke-width="8.5" stroke-linecap="round" filter="url(#neon-glow)" stroke-dasharray="5.46 364.42" transform="rotate(150 370 138)"/>
+  <circle cx="370" cy="138" r="58" fill="none" stroke="url(#gauge-grad)" stroke-width="8.5" stroke-linecap="round" filter="url(#neon-glow)" stroke-dasharray="5.60 364.42" transform="rotate(150 370 138)"/>
 
   <!-- 扇型ゲージ周囲の目盛りとランク文字 -->
   <line x1="314.6" y1="170.0" x2="308.5" y2="173.5" stroke="#00f2fe" stroke-width="1.5"/>
@@ -129,9 +129,9 @@
 
   <!-- 達成度を示す針（目標位置付近で自然な加減速で大きくぐらつく計器演出） -->
   <g transform="translate(370,138)">
-    <g transform="rotate(-114.61)">
+    <g transform="rotate(-114.46)">
       <polygon points="0,-53 -3.2,8 0,12 3.2,8" fill="#ff007f" filter="url(#neon-glow)"/>
-      <animateTransform attributeName="transform" type="rotate" values="-114.61;-109.41;-118.11;-108.61;-116.81;-111.21;-119.11;-112.61;-114.61" keyTimes="0;0.11;0.24;0.39;0.52;0.66;0.80;0.91;1" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1" dur="3.6s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="-114.46;-109.26;-117.96;-108.46;-116.66;-111.06;-118.96;-112.46;-114.46" keyTimes="0;0.11;0.24;0.39;0.52;0.66;0.80;0.91;1" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1" dur="3.6s" repeatCount="indefinite" />
     </g>
   </g>
   <circle cx="370" cy="138" r="6" fill="#00f2fe"/>
@@ -139,5 +139,5 @@
 
   <!-- 扇型下部のランク・達成度サマリー -->
   <text x="370" y="186" fill="#00f2fe" font-family="monospace" font-size="18.5" font-weight="bold" text-anchor="middle" filter="url(#neon-glow)">RANK C</text>
-  <text x="370" y="206" fill="#ff007f" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">2.2%</text>
+  <text x="370" y="206" fill="#ff007f" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">2.3%</text>
 </svg>
