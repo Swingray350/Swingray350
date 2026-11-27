@@ -17,13 +17,13 @@
   <text x="18" y="29" fill="#00f2fe" font-family="monospace" font-size="16.5" font-weight="bold">Most Used Languages</text>
 
   <!-- 内側ベースドーナツリングと装飾点線リング -->
-  <circle cx="104" cy="132" r="39" fill="none" stroke="#ff007f" stroke-width="4" stroke-dasharray="172.11 245.04" stroke-dashoffset="-0.00" transform="rotate(-90 104 132)" opacity="0.9"/>
-  <circle cx="104" cy="132" r="39" fill="none" stroke="#00f2fe" stroke-width="4" stroke-dasharray="65.79 245.04" stroke-dashoffset="-173.31" transform="rotate(-90 104 132)" opacity="0.9"/>
-  <circle cx="104" cy="132" r="39" fill="none" stroke="#00ffb2" stroke-width="4" stroke-dasharray="3.55 245.04" stroke-dashoffset="-240.30" transform="rotate(-90 104 132)" opacity="0.9"/>
+  <circle cx="104" cy="132" r="39" fill="none" stroke="#ff007f" stroke-width="4" stroke-dasharray="175.09 245.04" stroke-dashoffset="-0.00" transform="rotate(-90 104 132)" opacity="0.9"/>
+  <circle cx="104" cy="132" r="39" fill="none" stroke="#00f2fe" stroke-width="4" stroke-dasharray="63.00 245.04" stroke-dashoffset="-176.29" transform="rotate(-90 104 132)" opacity="0.9"/>
+  <circle cx="104" cy="132" r="39" fill="none" stroke="#00ffb2" stroke-width="4" stroke-dasharray="3.35 245.04" stroke-dashoffset="-240.49" transform="rotate(-90 104 132)" opacity="0.9"/>
   <circle cx="104" cy="132" r="31" fill="none" stroke="#7928ca" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
 
   <!-- 円中央の最多言語表示 -->
-  <text x="104" y="128" fill="#00f2fe" font-family="monospace" font-size="16.5" font-weight="bold" text-anchor="middle">71%</text>
+  <text x="104" y="128" fill="#00f2fe" font-family="monospace" font-size="16.5" font-weight="bold" text-anchor="middle">72%</text>
   <text x="104" y="146" fill="#e0e0e0" font-family="monospace" font-size="11" text-anchor="middle" opacity="0.9">Python</text>
 
   <!-- 外側放射状オーディオスペクトラムバー（90本・高速ランダム脈動） -->
@@ -349,7 +349,7 @@
       </rect>
     </g>
     <g transform="translate(104,132) rotate(166)">
-      <rect x="45" y="-0.85" width="8.6" height="1.7" rx="0.85" fill="#00f2fe" opacity="0.92">
+      <rect x="45" y="-0.85" width="8.6" height="1.7" rx="0.85" fill="#ff007f" opacity="0.92">
         <animate attributeName="width" values="8.6;7.7;20.5;8.5;7.0;13.9;11.6;5.0;8.4;13.3;11.3;19.8;5.9;11.9;10.7;3.5;8.6" dur="0.72s" begin="-0.65s" repeatCount="indefinite" />
       </rect>
     </g>
@@ -483,10 +483,10 @@
   <!-- 右側凡例リスト -->
   <rect x="194" y="98.5" width="10" height="10" rx="2.5" fill="#ff007f"/>
   <text x="211" y="108.5" fill="#e0e0e0" font-family="monospace" font-size="14">Python</text>
-  <text x="382" y="108.5" fill="#ff007f" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">70.7%</text>
+  <text x="382" y="108.5" fill="#ff007f" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">71.9%</text>
   <rect x="194" y="126.5" width="10" height="10" rx="2.5" fill="#00f2fe"/>
   <text x="211" y="136.5" fill="#e0e0e0" font-family="monospace" font-size="14">JavaScript</text>
-  <text x="382" y="136.5" fill="#00f2fe" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">27.3%</text>
+  <text x="382" y="136.5" fill="#00f2fe" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">26.2%</text>
   <rect x="194" y="154.5" width="10" height="10" rx="2.5" fill="#00ffb2"/>
   <text x="211" y="164.5" fill="#e0e0e0" font-family="monospace" font-size="14">HTML</text>
   <text x="382" y="164.5" fill="#00ffb2" font-family="monospace" font-size="14" font-weight="bold" text-anchor="end">1.9%</text>
