@@ -26,69 +26,85 @@
     </linearGradient>
     <!-- エリアの塗りを線の描画と同期して左から表示する -->
     <clipPath id="area-reveal">
-      <rect x="40" y="36" width="242" height="134">
+      <rect x="40" y="44" width="242" height="126">
         <animate attributeName="width" values="0;0;242;242" keyTimes="0;0.05;0.45;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.25 1;0 0 1 1" dur="6s" repeatCount="indefinite"/>
       </rect>
     </clipPath>
     <!-- スキャナーの帯を X 軸（y=168）で切る -->
     <clipPath id="plot-clip">
-      <rect x="0" y="36" width="300" height="132"/>
+      <rect x="0" y="44" width="300" height="124"/>
     </clipPath>
   </defs>
 
   <!-- 外枠・背景 -->
   <rect x="0.5" y="0.5" width="299" height="194" rx="4.5" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
 
-  <!-- ヘッダー -->
-  <text x="16" y="25" font-family="monospace" font-size="10.5" font-weight="bold" fill="#7928ca" letter-spacing="0.8">TOTAL CONTRIBUTIONS</text>
-  <text x="284" y="25" text-anchor="end" font-family="monospace" font-size="10" fill="#9a8ec4">SINCE 2026.11</text>
+  <!-- ヘッダー（STREAKと色・サイズ・Y位置を統一） -->
+  <text x="16" y="27" fill="#00f2fe" font-family="monospace" font-size="14" font-weight="bold">TOTAL CONTRIBUTIONS</text>
 
-  <!-- 水平グリッド線（0〜50 を y=168〜40 に対応させる。5等分＝25.6px） -->
-  <line x1="40" y1="40" x2="282" y2="40" stroke="#7928ca" stroke-opacity="0.25" stroke-dasharray="2,3" stroke-width="0.8"/>
-  <line x1="40" y1="65.6" x2="282" y2="65.6" stroke="#7928ca" stroke-opacity="0.25" stroke-dasharray="2,3" stroke-width="0.8"/>
-  <line x1="40" y1="91.2" x2="282" y2="91.2" stroke="#7928ca" stroke-opacity="0.25" stroke-dasharray="2,3" stroke-width="0.8"/>
-  <line x1="40" y1="116.8" x2="282" y2="116.8" stroke="#7928ca" stroke-opacity="0.25" stroke-dasharray="2,3" stroke-width="0.8"/>
-  <line x1="40" y1="142.4" x2="282" y2="142.4" stroke="#7928ca" stroke-opacity="0.25" stroke-dasharray="2,3" stroke-width="0.8"/>
+  <!-- 水平グリッド線（0〜500 を y=168〜48 に対応させる。100件ごと＝24px） -->
+  <line x1="40" y1="48" x2="282" y2="48" stroke="#00ffb2" stroke-opacity="0.6" stroke-dasharray="6,3" stroke-width="1"/>
+  <line x1="40" y1="72" x2="282" y2="72" stroke="#7928ca" stroke-opacity="0.25" stroke-dasharray="2,3" stroke-width="0.8"/>
+  <line x1="40" y1="96" x2="282" y2="96" stroke="#7928ca" stroke-opacity="0.25" stroke-dasharray="2,3" stroke-width="0.8"/>
+  <line x1="40" y1="120" x2="282" y2="120" stroke="#7928ca" stroke-opacity="0.25" stroke-dasharray="2,3" stroke-width="0.8"/>
+  <!-- 過去のGOAL位置（100）：緑の横線として明示する -->
+  <line x1="40" y1="144" x2="282" y2="144" stroke="#00ffb2" stroke-opacity="0.45" stroke-dasharray="6,3" stroke-width="0.9"/>
+  <text x="280" y="152.5" text-anchor="end" font-family="monospace" font-size="7.5" fill="#00ffb2" opacity="0.75">GOAL 100</text>
   <line x1="40" y1="168" x2="282" y2="168" stroke="#7928ca" stroke-opacity="0.5" stroke-width="1"/>
 
   <!-- 縦軸と目盛り -->
-  <line x1="40" y1="40" x2="40" y2="168" stroke="#7928ca" stroke-opacity="0.5" stroke-width="1"/>
+  <line x1="40" y1="48" x2="40" y2="168" stroke="#7928ca" stroke-opacity="0.5" stroke-width="1"/>
   <g stroke="#7928ca" stroke-opacity="0.6" stroke-width="1">
-    <line x1="37" y1="40" x2="40" y2="40"/>
-    <line x1="37" y1="65.6" x2="40" y2="65.6"/>
-    <line x1="37" y1="91.2" x2="40" y2="91.2"/>
-    <line x1="37" y1="116.8" x2="40" y2="116.8"/>
-    <line x1="37" y1="142.4" x2="40" y2="142.4"/>
+    <line x1="37" y1="48" x2="40" y2="48" stroke="#00ffb2" stroke-opacity="0.8"/>
+    <line x1="37" y1="72" x2="40" y2="72"/>
+    <line x1="37" y1="96" x2="40" y2="96"/>
+    <line x1="37" y1="120" x2="40" y2="120"/>
+    <line x1="37" y1="144" x2="40" y2="144" stroke="#00ffb2" stroke-opacity="0.8"/>
     <line x1="37" y1="168" x2="40" y2="168"/>
   </g>
   <g font-family="monospace" font-size="8.5" fill="#9a8ec4" text-anchor="end">
-    <text x="35" y="43">50</text>
-    <text x="35" y="68.6">40</text>
-    <text x="35" y="94.2">30</text>
-    <text x="35" y="119.8">20</text>
-    <text x="35" y="145.4">10</text>
+    <text x="35" y="51" fill="#00ffb2" font-weight="bold">500</text>
+    <text x="35" y="75">400</text>
+    <text x="35" y="99">300</text>
+    <text x="35" y="123">200</text>
+    <text x="35" y="147" fill="#00ffb2">100</text>
     <text x="35" y="171">0</text>
   </g>
 
   <!-- 総数（プロット左上の空いた領域に置き、罫線と重ねる） -->
-  <text x="50" y="84" font-family="monospace" font-size="38" font-weight="bold" fill="#00f2fe" filter="url(#glow-cyan-4)">29</text>
+  <text x="50" y="90" font-family="monospace" font-size="38" font-weight="bold" fill="#00f2fe" filter="url(#glow-cyan-4)">428</text>
   <!-- 終点に到達した瞬間に総数が一瞬光る -->
-  <text x="50" y="84" font-family="monospace" font-size="38" font-weight="bold" fill="#ffffff" opacity="0" filter="url(#glow-cyan-4)">29<animate attributeName="opacity" values="0;0;0.55;0;0" keyTimes="0;0.44;0.47;0.62;1" dur="6s" repeatCount="indefinite"/></text>
+  <text x="50" y="90" font-family="monospace" font-size="38" font-weight="bold" fill="#ffffff" opacity="0" filter="url(#glow-cyan-4)">428<animate attributeName="opacity" values="0;0;0.55;0;0" keyTimes="0;0.44;0.47;0.62;1" dur="6s" repeatCount="indefinite"/></text>
+
+  <!-- 次のチェックポイント（GOAL 500）：未達成なので中空のダイヤを点滅させる -->
+  <rect x="-4" y="-4" width="8" height="8" transform="translate(280 48) rotate(45)" fill="#0d0221" stroke="#00ffb2" stroke-width="1.3">
+    <animate attributeName="opacity" values="1;0.3;1" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" dur="1.6s" repeatCount="indefinite"/>
+  </rect>
+  <text x="270" y="43" text-anchor="end" font-family="monospace" font-size="10.5" font-weight="bold" fill="#00ffb2">NEXT 500 // 72 LEFT</text>
 
   <!-- チャートレイヤー（周期の終わりにまとめてフェードアウトし、空の状態から再描画することで継ぎ目なくループさせる） -->
   <g>
     <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.82;0.95;1" calcMode="spline" keySplines="0 0 1 1;0.42 0 0.58 1;0 0 1 1" dur="6s" repeatCount="indefinite"/>
 
     <!-- 累積エリアの塗り -->
-    <path d="M 40.0 168.0 C 56.0 161.2, 72.0 150.1, 88.0 147.5 C 104.0 145.0, 120.0 145.0, 136.0 145.0 C 152.0 145.0, 168.0 145.0, 184.0 145.0 C 200.0 145.0, 216.0 98.9, 232.0 96.3 C 248.0 93.8, 264.0 94.0, 280.0 93.8 L 280.0 168.0 L 40.0 168.0 Z" fill="url(#area-grad)" clip-path="url(#area-reveal)"/>
+    <path d="M 40.0 168.0 C 71.1 162.5, 89.5 145.8, 113.3 134.7 C 140.8 122.2, 162.7 109.7, 192.1 93.0 C 221.4 76.3, 250.7 70.8, 280.0 65.3 L 280.0 168.0 L 40.0 168.0 Z" fill="url(#area-grad)" clip-path="url(#area-reveal)"/>
 
     <!-- 累積カーブ（dasharray のギャップを120にするのは、offset=101 のときに次の dash が終端に現れないようにするため） -->
-    <path id="curve-line" d="M 40.0 168.0 C 56.0 161.2, 72.0 150.1, 88.0 147.5 C 104.0 145.0, 120.0 145.0, 136.0 145.0 C 152.0 145.0, 168.0 145.0, 184.0 145.0 C 200.0 145.0, 216.0 98.9, 232.0 96.3 C 248.0 93.8, 264.0 94.0, 280.0 93.8" fill="none" stroke="#ff007f" stroke-width="2" stroke-linecap="round" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="0">
+    <path id="curve-line" d="M 40.0 168.0 C 71.1 162.5, 89.5 145.8, 113.3 134.7 C 140.8 122.2, 162.7 109.7, 192.1 93.0 C 221.4 76.3, 250.7 70.8, 280.0 65.3" fill="none" stroke="#ff007f" stroke-width="2" stroke-linecap="round" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="0">
       <animate attributeName="stroke-dashoffset" values="101;101;0;0" keyTimes="0;0.05;0.45;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.25 1;0 0 1 1" dur="6s" repeatCount="indefinite"/>
     </path>
 
+    <!-- 通過済みチェックポイント（過去のGOAL 100）：エリアと同じクリップで、カーブが通過した瞬間に出現する -->
+    <g clip-path="url(#area-reveal)">
+      <rect x="-3.2" y="-3.2" width="6.4" height="6.4" transform="translate(95.9 144.0) rotate(45)" fill="#00ffb2" stroke="#0d0221" stroke-width="1" filter="url(#glow-cyan-4)"/>
+    </g>
+    <!-- 終点から次のチェックポイントへの点線（到達後に表示） -->
+    <line x1="280" y1="59.0" x2="280" y2="54.0" stroke="#00ffb2" stroke-width="1" stroke-dasharray="1.5,2" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.9;0.9" keyTimes="0;0.48;0.55;1" dur="6s" repeatCount="indefinite"/>
+    </line>
+
     <!-- 到達時の波紋リング -->
-    <circle cx="280" cy="93.8" r="3.5" fill="none" stroke="#ff007f" stroke-width="1.5" opacity="0">
+    <circle cx="280" cy="65.3" r="3.5" fill="none" stroke="#ff007f" stroke-width="1.5" opacity="0">
       <animate attributeName="r" values="3.5;3.5;16;16" keyTimes="0;0.45;0.66;1" calcMode="spline" keySplines="0 0 1 1;0.2 0.6 0.35 1;0 0 1 1" dur="6s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0;0.9;0;0" keyTimes="0;0.44;0.46;0.66;1" dur="6s" repeatCount="indefinite"/>
     </circle>
@@ -96,11 +112,11 @@
     <!-- 最新地点（終点）のドット：到達後に表示して呼吸させる -->
     <g opacity="1">
       <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.44;0.47;1" dur="6s" repeatCount="indefinite"/>
-      <circle cx="280" cy="93.8" r="7" fill="#ff007f" opacity="0.35">
+      <circle cx="280" cy="65.3" r="7" fill="#ff007f" opacity="0.35">
         <animate attributeName="r" values="4;9;4" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" dur="1.8s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0.6;0.1;0.6" keyTimes="0;0.5;1" dur="1.8s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="280" cy="93.8" r="3.5" fill="#ff007f" stroke="#ffffff" stroke-width="1" filter="url(#glow-pink-4)"/>
+      <circle cx="280" cy="65.3" r="3.5" fill="#ff007f" stroke="#ffffff" stroke-width="1" filter="url(#glow-pink-4)"/>
     </g>
   </g>
 
@@ -111,14 +127,14 @@
         <mpath xlink:href="#curve-line"/>
       </animateMotion>
       <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.04;0.07;0.43;0.47;1" dur="6s" repeatCount="indefinite"/>
-      <rect x="-0.6" y="0" width="1.2" height="130" fill="url(#scan-grad)"/>
+      <rect x="-0.6" y="0" width="1.2" height="122" fill="url(#scan-grad)"/>
       <circle r="5.5" fill="#00f2fe" opacity="0.3"/>
       <circle r="2.8" fill="#ffffff" stroke="#00f2fe" stroke-width="1.2" filter="url(#glow-cyan-4)"/>
     </g>
   </g>
 
   <!-- 下部軸ラベル -->
-  <text x="40" y="182" font-family="monospace" font-size="9.5" fill="#9a8ec4">START</text>
-  <text x="161" y="182" text-anchor="middle" font-family="monospace" font-size="9" fill="#7928ca">CUMULATIVE GROWTH</text>
-  <text x="282" y="182" text-anchor="end" font-family="monospace" font-size="9.5" font-weight="bold" fill="#00f2fe">NOW (29)</text>
+  <text x="40" y="182" font-family="monospace" font-size="9.5" fill="#9a8ec4">2025/04/01</text>
+  <text x="175" y="182" text-anchor="middle" font-family="monospace" font-size="9" fill="#7928ca">CUMULATIVE GROWTH</text>
+  <text x="282" y="182" text-anchor="end" font-family="monospace" font-size="9.5" font-weight="bold" fill="#00f2fe">NOW</text>
 </svg>
