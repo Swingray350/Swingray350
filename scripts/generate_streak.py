@@ -184,16 +184,16 @@ def build_streak_svg(info: dict[str, str | int]) -> str:
     else:
         status_color = "#7928ca"
         status_text = "STANDBY"
-    dot_x = round(536.0 - len(status_text) * 6.6 - 10.0, 1)
+    dot_x = round(450.0 - len(status_text) * 6.6 - 10.0, 1)
 
     # 24セグメントの斜めシェブロンチャージバー生成
     chevrons: list[str] = []
     clip_polys: list[str] = []
     for i in range(N_SEGMENTS):
-        x0 = 24.0 + i * 21.2
-        x1 = x0 + 16.5
-        x2 = x1 + 5.0
-        x3 = x0 + 5.0
+        x0 = 20.0 + i * 17.6
+        x1 = x0 + 13.5
+        x2 = x1 + 4.5
+        x3 = x0 + 4.5
         pts = f"{x3:.1f},78 {x2:.1f},78 {x1:.1f},102 {x0:.1f},102"
         if i < lit_count:
             if i < 8:
@@ -208,7 +208,7 @@ def build_streak_svg(info: dict[str, str | int]) -> str:
             chevrons.append(f'  <polygon points="{pts}" fill="#2a1650" opacity="0.8"/>')
 
     if lit_count > 0:
-        end_x = round(24.0 + lit_count * 21.2 + 20.0, 1)
+        end_x = round(20.0 + lit_count * 17.6 + 20.0, 1)
         clip_block = (
             '    <clipPath id="chev-clip">\n'
             + "\n".join(clip_polys)
@@ -239,7 +239,7 @@ def build_streak_svg(info: dict[str, str | int]) -> str:
 
     chevrons_block = "\n".join(chevrons)
 
-    return f"""<svg width="560" height="195" viewBox="0 0 560 195" xmlns="http://www.w3.org/2000/svg">
+    return f"""<svg width="470" height="195" viewBox="0 0 470 195" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- セグメント・数値・ランプにサイバーパンク風のネオン発光効果を与える -->
     <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
@@ -259,35 +259,35 @@ def build_streak_svg(info: dict[str, str | int]) -> str:
   </defs>
 
   <!-- 外枠と背景（プロフィール全体と統一した右上・左下斜めカット枠） -->
-  <polygon points="0.5,0.5 547.5,0.5 559.5,12.5 559.5,194.5 12.5,194.5 0.5,182.5" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
+  <polygon points="0.5,0.5 457.5,0.5 469.5,12.5 469.5,194.5 12.5,194.5 0.5,182.5" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
 
   <!-- ヘッダーと稼働ステータスランプ -->
-  <text x="24" y="27" fill="#00f2fe" font-family="monospace" font-size="14" font-weight="bold">STREAK // OVERDRIVE METER</text>
+  <text x="20" y="27" fill="#00f2fe" font-family="monospace" font-size="14" font-weight="bold">STREAK // OVERDRIVE METER</text>
   <circle cx="{dot_x}" cy="22" r="3.2" fill="{status_color}" filter="url(#neon-glow)">
     <animate attributeName="opacity" values="1;0.25;1" dur="1.4s" repeatCount="indefinite" />
   </circle>
-  <text x="536" y="26" fill="{status_color}" font-family="monospace" font-size="11" font-weight="bold" text-anchor="end">{status_text}</text>
+  <text x="450" y="26" fill="{status_color}" font-family="monospace" font-size="11" font-weight="bold" text-anchor="end">{status_text}</text>
 
   <!-- メイン指標（Current Streak vs Target Record） -->
-  <text x="24" y="63" fill="#ff007f" font-family="monospace" font-size="22" font-weight="bold" filter="url(#neon-glow)">CURRENT: {current} {_unit_days(current)}</text>
-  <text x="536" y="62" fill="#00f2fe" font-family="monospace" font-size="13.5" font-weight="bold" text-anchor="end">TARGET RECORD: {longest} {_unit_days(longest)} ({pct:.0f}%)</text>
+  <text x="20" y="63" fill="#ff007f" font-family="monospace" font-size="20" font-weight="bold" filter="url(#neon-glow)">CURRENT: {current} {_unit_days(current)}</text>
+  <text x="450" y="62" fill="#00f2fe" font-family="monospace" font-size="12" font-weight="bold" text-anchor="end">TARGET RECORD: {longest} {_unit_days(longest)} ({pct:.0f}%)</text>
 
   <!-- 24セグメント斜めシェブロンチャージバー -->
 {chevrons_block}
 {pulse_block}
 
   <!-- 右端ゴールマーカー -->
-  <line x1="536" y1="74" x2="536" y2="108" stroke="#00ffb2" stroke-width="1.5" stroke-dasharray="2 2"/>
-  <text x="536" y="118" fill="#00ffb2" font-family="monospace" font-size="9" font-weight="bold" text-anchor="end">BEST</text>
+  <line x1="450" y1="74" x2="450" y2="108" stroke="#00ffb2" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <text x="450" y="118" fill="#00ffb2" font-family="monospace" font-size="9" font-weight="bold" text-anchor="end">BEST</text>
 
   <!-- 下部2サブパネル（Total Contributionsを除外しStreak情報に特化） -->
-  <rect x="24" y="130" width="248" height="48" rx="4" fill="#140630" stroke="#7928ca" stroke-width="1" stroke-opacity="0.7"/>
-  <text x="148" y="147" fill="#7928ca" font-family="monospace" font-size="10.5" font-weight="bold" text-anchor="middle">CURRENT SPAN</text>
-  <text x="148" y="168" fill="#e0e0e0" font-family="monospace" font-size="14" font-weight="bold" text-anchor="middle">{current_span}</text>
+  <rect x="20" y="130" width="207" height="48" rx="4" fill="#140630" stroke="#7928ca" stroke-width="1" stroke-opacity="0.7"/>
+  <text x="123.5" y="147" fill="#7928ca" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">CURRENT SPAN</text>
+  <text x="123.5" y="168" fill="#e0e0e0" font-family="monospace" font-size="13.5" font-weight="bold" text-anchor="middle">{current_span}</text>
 
-  <rect x="288" y="130" width="248" height="48" rx="4" fill="#140630" stroke="#7928ca" stroke-width="1" stroke-opacity="0.7"/>
-  <text x="412" y="147" fill="#7928ca" font-family="monospace" font-size="10.5" font-weight="bold" text-anchor="middle">BEST: {longest_span}</text>
-  <text x="412" y="168" fill="{right_color}" font-family="monospace" font-size="15" font-weight="bold" text-anchor="middle"{right_filter}>{right_value}</text>
+  <rect x="243" y="130" width="207" height="48" rx="4" fill="#140630" stroke="#7928ca" stroke-width="1" stroke-opacity="0.7"/>
+  <text x="346.5" y="147" fill="#7928ca" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">BEST: {longest_span}</text>
+  <text x="346.5" y="168" fill="{right_color}" font-family="monospace" font-size="14" font-weight="bold" text-anchor="middle"{right_filter}>{right_value}</text>
 </svg>
 """
 
