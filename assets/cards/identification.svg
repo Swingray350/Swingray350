@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="106" viewBox="0 0 520 106">
+  <defs>
+    <filter id="glow-id" x="-20%" y="-30%" width="140%" height="160%">
+      <feGaussianBlur stdDeviation="1.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="accent-bar-id" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="50%" stop-color="#7928ca"/>
+      <stop offset="100%" stop-color="#ff007f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 面取りHUDパネル本体（背景透過） -->
+  <polygon points="0.5,0.5 509.5,0.5 519.5,10.5 519.5,105.5 10.5,105.5 0.5,95.5" fill="#0d0221" stroke="#00f2fe" stroke-opacity="0.75" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="4" height="94" fill="url(#accent-bar-id)"/>
+  <circle cx="513.5" cy="99.5" r="1.2" fill="#00f2fe" opacity="0.7"/>
+
+  <!-- 右上ステータス小ラベル＆呼吸ドット -->
+  <circle cx="388" cy="16" r="2.3" fill="#00ffb2" filter="url(#glow-id)">
+    <animate attributeName="opacity" values="1;0.25;1" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="504" y="19" text-anchor="end" font-family="monospace" font-size="8.5" font-weight="bold" fill="#00ffb2" opacity="0.85">ID_RECORD // VERIFIED</text>
+
+  <!-- 行間破線 -->
+  <line x1="18" y1="44" x2="504" y2="44" stroke="#7928ca" stroke-opacity="0.28" stroke-dasharray="2,3" stroke-width="0.9"/>
+  <line x1="18" y1="74" x2="504" y2="74" stroke="#7928ca" stroke-opacity="0.28" stroke-dasharray="2,3" stroke-width="0.9"/>
+
+  <!-- 行1: NAME -->
+  <g transform="translate(24, 28)" stroke="#00f2fe" stroke-width="1.2" fill="none">
+    <circle cx="0" cy="-2.5" r="2.3"/>
+    <path d="M -4 4 C -4 1.5, 4 1.5, 4 4" stroke-linecap="round"/>
+  </g>
+  <text x="38" y="32" font-family="monospace" font-size="10.5" font-weight="bold" fill="#8be9fd">NAME</text>
+  <text x="84" y="32" font-family="monospace" font-size="10.5" fill="#7928ca">:</text>
+  <text x="98" y="32" font-family="'Segoe UI', 'Yu Gothic UI', 'Hiragino Sans', 'Meiryo', sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff">沙渡 椿 <tspan font-family="monospace" font-size="11" font-weight="normal" fill="#9a8ec4">(Tsubaki Sawatari)</tspan></text>
+
+  <!-- 行2: ID -->
+  <g transform="translate(24, 58)" stroke="#00f2fe" stroke-width="1.2" fill="none">
+    <circle cx="0" cy="0" r="4.5"/>
+    <circle cx="0" cy="0" r="1.5" fill="#00f2fe"/>
+  </g>
+  <text x="38" y="62" font-family="monospace" font-size="10.5" font-weight="bold" fill="#8be9fd">ID</text>
+  <text x="84" y="62" font-family="monospace" font-size="10.5" fill="#7928ca">:</text>
+  <text x="98" y="62" font-family="monospace" font-size="12.5" font-weight="bold" fill="#00f2fe" filter="url(#glow-id)">@Swingray350</text>
+
+  <!-- 行3: CLASS -->
+  <g transform="translate(24, 88)" stroke="#ff007f" stroke-width="1.2" fill="none">
+    <rect x="-3.5" y="-3.5" width="7" height="7" rx="1"/>
+    <rect x="-1.2" y="-1.2" width="2.4" height="2.4" fill="#ff007f" stroke="none"/>
+  </g>
+  <text x="38" y="92" font-family="monospace" font-size="10.5" font-weight="bold" fill="#8be9fd">CLASS</text>
+  <text x="84" y="92" font-family="monospace" font-size="10.5" fill="#7928ca">:</text>
+  <text x="98" y="92" font-family="monospace" font-size="12" fill="#e0e0e0">Hardware Hacker &amp; Maker</text>
+</svg>

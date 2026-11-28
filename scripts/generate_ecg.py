@@ -83,8 +83,8 @@ for i in range(0, 61, 5):
 
 # SVGファイルの生成
 svg_content = f"""<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">
-  <!-- 背景 -->
-  <rect width="{width}" height="{height}" fill="#0d0221" rx="10"/>
+  <!-- 外枠と背景（プロフィール全体と統一した右上・左下斜めカット枠） -->
+  <polygon points="0.5,0.5 {width - 12.5},0.5 {width - 0.5},12.5 {width - 0.5},{height - 0.5} 12.5,{height - 0.5} 0.5,{height - 12.5}" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
   
   <!-- テキスト（タイトルと軸ラベル） -->
   <text x="60" y="30" fill="#00f2fe" font-family="monospace" font-size="16" font-weight="bold">Contribution Graph</text>

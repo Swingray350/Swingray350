@@ -417,8 +417,8 @@ def build_total_contributions_svg(series_info: dict[str, object]) -> str:
     </clipPath>
   </defs>
 
-  <!-- 外枠・背景 -->
-  <rect x="0.5" y="0.5" width="299" height="194" rx="4.5" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
+  <!-- 外枠・背景（プロフィール全体と統一した右上・左下斜めカット枠） -->
+  <polygon points="0.5,0.5 287.5,0.5 299.5,12.5 299.5,194.5 12.5,194.5 0.5,182.5" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
 
   <!-- ヘッダー（STREAKと色・サイズ・Y位置を統一） -->
   <text x="16" y="27" fill="#00f2fe" font-family="monospace" font-size="14" font-weight="bold">TOTAL CONTRIBUTIONS</text>

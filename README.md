@@ -8,15 +8,15 @@
 <br/><br/>
 <!-- SNS・外部リンクボタン -->
 <a href="https://x.com/swtr350_ino" target="_blank">
-  <img src="https://img.shields.io/badge/X_(Twitter)-@swtr350_ino-00f2fe?style=for-the-badge&logo=x&logoColor=00f2fe&labelColor=0d0221" alt="X" />
+  <img src="./assets/badges/sns-x.svg" alt="X" />
 </a>
 &nbsp;
 <a>
-<img src="https://img.shields.io/badge/Discord-ray.sd350-7928ca?style=for-the-badge&logo=discord&logoColor=00f2fe&labelColor=0d0221" alt="Discord" />
+  <img src="./assets/badges/sns-discord.svg" alt="Discord" />
 </a>
 &nbsp;
 <a href="https://note.com/swingray350" target="_blank">
-  <img src="https://img.shields.io/badge/note-swingray350-ff007f?style=for-the-badge&logo=note&logoColor=ff007f&labelColor=0d0221" alt="note" />
+  <img src="./assets/badges/sns-note.svg" alt="note" />
 </a>
 
 <br/>
@@ -32,14 +32,16 @@
 <br/>
 
 <img src="./assets/headings/identification.svg" alt="[ IDENTIFICATION ]" />
-
-> 👤 **Name:** 沙渡 椿 (Tsubaki Sawatari)<br>🔗 **ID:** `@Swingray350`<br>🛠️ **Class:** Hardware Hacker & Maker
+<br/>
+<img src="./assets/cards/identification.svg" alt="Name: 沙渡 椿 (Tsubaki Sawatari) / ID: @Swingray350 / Class: Hardware Hacker &amp; Maker" />
 
 <br/>
 
 <img src="./assets/headings/system-status.svg" alt="[ SYSTEM_STATUS ]" />
-
-> _"Building physical & digital things in neon light."_<br><img src="https://img.shields.io/badge/Status-ONLINE-00f2fe?style=flat-square&color=00f2fe&labelColor=0d0221" alt="Status" /> <img src="https://img.shields.io/badge/Base-Japan-ff007f?style=flat-square&color=ff007f&labelColor=0d0221" alt="Base" />
+<br/>
+<img src="./assets/cards/system-status-quote.svg" alt="Building physical &amp; digital things in neon light." />
+<br/>
+<img src="./assets/badges/status-online.svg" alt="Status" /> <img src="./assets/badges/base-japan.svg" alt="Base" />
 
 <br/>
 <div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=7928ca&height=1" width="100%" /></div>
@@ -52,15 +54,15 @@
 
 <img src="./assets/headings/electronics.svg" alt="[ ELECTRONICS ]" />
 <br/>
-<img src="https://img.shields.io/badge/ESP32-Microcontroller-ff007f?style=for-the-badge&logo=espressif&logoColor=00f2fe&labelColor=2a3447" alt="ESP32" />
-<img src="https://img.shields.io/badge/Arduino-Prototyping-00f2fe?style=for-the-badge&logo=arduino&logoColor=ff007f&labelColor=2a3447" alt="Arduino" />
+<img src="./assets/badges/stack-esp32.svg" alt="ESP32" />
+<img src="./assets/badges/stack-arduino.svg" alt="Arduino" />
 
 <br/><br/>
 
 <img src="./assets/headings/fabrication.svg" alt="[ FABRICATION ]" />
 <br/>
-<img src="https://img.shields.io/badge/3D_Printing-Additive_Mfg-7928ca?style=for-the-badge&logo=bambulab&logoColor=00f2fe&labelColor=2a3447" alt="3D Printing" />
-<img src="https://img.shields.io/badge/Autodesk_Fusion-3D_CAD-ff007f?style=for-the-badge&logo=autodesk&logoColor=00f2fe&labelColor=2a3447" alt="Fusion" />
+<img src="./assets/badges/stack-3d-printing.svg" alt="3D Printing" />
+<img src="./assets/badges/stack-fusion.svg" alt="Fusion" />
 
 <br/><br/>
 
@@ -101,14 +103,16 @@
 <br/>
 
 <img src="./assets/headings/equipment-inventory.svg" alt="[ EQUIPMENT_INVENTORY ]" />
-
-> <img src="https://img.shields.io/badge/Bambu_Lab-X1_Carbon-00f2fe?style=flat-square&logo=bambulab&logoColor=0d0221&color=00f2fe" alt="Bambu Lab" /> <img src="https://img.shields.io/badge/Autodesk-Fusion-7928ca?style=flat-square&logo=autodesk&logoColor=fff" alt="Fusion" /><br><img src="https://img.shields.io/badge/Seeed_XIAO-ESP32S3_/_C6-ff007f?style=flat-square" alt="XIAO" /> <img src="https://img.shields.io/badge/Arduino-Nano-ff007f?style=flat-square" alt="Arduino" />
+<br/>
+<img src="./assets/badges/equip-bambu-lab.svg" alt="Bambu Lab" /> <img src="./assets/badges/equip-fusion.svg" alt="Fusion" />
+<br/>
+<img src="./assets/badges/equip-xiao.svg" alt="XIAO" /> <img src="./assets/badges/equip-arduino-nano.svg" alt="Arduino" />
 
 <br/>
 
 <img src="./assets/headings/active-missions.svg" alt="[ ACTIVE_MISSIONS ]" />
-
-> 🖊️ **Motorized Pen Holder** (XIAO ESP32C6)<br>💡 **Neon Sign** (Filament LEDs & I2S Audio)<br>📡 **Smart Desk Light** (mmWave Presence Sensor)
+<br/>
+<img src="./assets/cards/active-missions.svg" alt="Active Missions: Motorized Pen Holder, Neon Sign, Smart Desk Light" />
 
 <br/>
 

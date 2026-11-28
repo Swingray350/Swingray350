@@ -258,8 +258,8 @@ def build_streak_svg(info: dict[str, str | int]) -> str:
 {clip_block}
   </defs>
 
-  <!-- 外枠と背景 -->
-  <rect x="0.5" y="0.5" width="559" height="194" rx="4.5" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
+  <!-- 外枠と背景（プロフィール全体と統一した右上・左下斜めカット枠） -->
+  <polygon points="0.5,0.5 547.5,0.5 559.5,12.5 559.5,194.5 12.5,194.5 0.5,182.5" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
 
   <!-- ヘッダーと稼働ステータスランプ -->
   <text x="24" y="27" fill="#00f2fe" font-family="monospace" font-size="14" font-weight="bold">STREAK // OVERDRIVE METER</text>

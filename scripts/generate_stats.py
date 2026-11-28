@@ -261,8 +261,8 @@ def build_stats_svg(stats: dict[str, int]) -> str:
 {clips_block}
   </defs>
 
-  <!-- 外枠と背景（隣のMost Used Languagesカードと高さ・角丸・配色を統一） -->
-  <rect x="0.5" y="0.5" width="464" height="229" rx="4.5" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
+  <!-- 外枠と背景（プロフィール全体と統一した右上・左下斜めカット枠） -->
+  <polygon points="0.5,0.5 452.5,0.5 464.5,12.5 464.5,229.5 12.5,229.5 0.5,217.5" fill="#0d0221" stroke="#ff007f" stroke-width="1"/>
 
   <!-- カードタイトル -->
   <text x="18" y="29" fill="#00f2fe" font-family="monospace" font-size="16.5" font-weight="bold">{USERNAME}'s GitHub Stats</text>
